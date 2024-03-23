@@ -1,0 +1,57 @@
+---
+- name: Install the Apache web server
+  hosts: webserver
+  vars:
+    web_pkg: httpd
+    firewall_pkg: firewalld
+    web_service: httpd
+    firewall_service: firewalld
+    python_pkg: python3-PyMySQL
+    rule: http
+  
+  tasks:
+    - name: Required packages are installed and up to date
+      yum:
+        name:
+          - "{{ web_pkg }}"
+          - "{{ firewall_pkg }}"
+          - "{{ python_pkg }}"
+        state: latest
+
+    - name: ensure the firewall is started and enabled
+      service:
+        name: "{{ firewall_service }}"
+        state: started
+        enabled: yes
+
+    - name: ensure the httpd is started and ennabled
+      service: "{{ web_service }}"
+      state: started
+      enabled: yes
+
+    - name: ensure that the content is in place
+      copy:
+        content: "Hello the world, this is prectice for EX295"
+        dest: "/var/ww/html/indext.html"
+
+    - name: allow the http on firewall
+      firewalld:
+        service: "{{ rule }}"
+        state: enabled
+        permanent: yes
+        immediate: yes
+
+- name: verify the web service
+  hosts: localhost
+  become: no
+
+  tasks:
+    - name: check access to the web service
+      uri:
+        url: "http://servera.lab.example.com"
+        status_code: 200
+      registry: output
+
+    - name: print the content of output
+      debug: 
+        var: output.content

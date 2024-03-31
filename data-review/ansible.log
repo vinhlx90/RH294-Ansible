@@ -1,0 +1,88 @@
+2024-03-31 11:23:31,255 p=3574 u=student n=ansible | Encryption successful
+2024-03-31 11:24:51,424 p=3620 u=student n=ansible | ERROR! 'var_files' is not a valid attribute for a Play
+
+The error appears to be in '/home/student/data-review/playbook.yml': line 75, column 3, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+        immediate: true
+- name: test basic authen
+  ^ here
+
+2024-03-31 11:26:41,265 p=3667 u=student n=ansible | ERROR! Attempting to decrypt but no vault secrets found
+2024-03-31 11:27:04,226 p=3686 u=student n=ansible | playbook: playbook.yml
+2024-03-31 11:27:30,828 p=3698 u=student n=ansible | PLAY [Install and configure the basic web server] **********************************************************************************************
+2024-03-31 11:27:30,844 p=3698 u=student n=ansible | TASK [Gathering Facts] *************************************************************************************************************************
+2024-03-31 11:27:32,426 p=3698 u=student n=ansible | ok: [serverb.lab.example.com]
+2024-03-31 11:27:32,434 p=3698 u=student n=ansible | TASK [Ensure the latest version of the necessary pakages are installed] ************************************************************************
+2024-03-31 11:27:38,813 p=3698 u=student n=ansible | changed: [serverb.lab.example.com]
+2024-03-31 11:27:38,823 p=3698 u=student n=ansible | TASK [configure web service] *******************************************************************************************************************
+2024-03-31 11:27:38,862 p=3698 u=student n=ansible | fatal: [serverb.lab.example.com]: FAILED! => {"msg": "The task includes an option with an undefined variable. The error was: 'httpdconf_src' is undefined\n\nThe error appears to be in '/home/student/data-review/playbook.yml': line 26, column 7, but may\nbe elsewhere in the file depending on the exact syntax problem.\n\nThe offending line appears to be:\n\n        state: latest\n    - name: configure web service\n      ^ here\n"}
+2024-03-31 11:27:38,863 p=3698 u=student n=ansible | PLAY RECAP *************************************************************************************************************************************
+2024-03-31 11:27:38,863 p=3698 u=student n=ansible | serverb.lab.example.com    : ok=2    changed=1    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2024-03-31 11:30:12,087 p=3840 u=student n=ansible | PLAY [Install and configure the basic web server] **********************************************************************************************
+2024-03-31 11:30:12,095 p=3840 u=student n=ansible | TASK [Gathering Facts] *************************************************************************************************************************
+2024-03-31 11:30:13,391 p=3840 u=student n=ansible | ok: [serverb.lab.example.com]
+2024-03-31 11:30:13,398 p=3840 u=student n=ansible | TASK [Ensure the latest version of the necessary pakages are installed] ************************************************************************
+2024-03-31 11:30:15,003 p=3840 u=student n=ansible | ok: [serverb.lab.example.com]
+2024-03-31 11:30:15,012 p=3840 u=student n=ansible | TASK [configure web service] *******************************************************************************************************************
+2024-03-31 11:30:15,912 p=3840 u=student n=ansible | changed: [serverb.lab.example.com]
+2024-03-31 11:30:15,919 p=3840 u=student n=ansible | TASK [create secrets dir] **********************************************************************************************************************
+2024-03-31 11:30:16,426 p=3840 u=student n=ansible | changed: [serverb.lab.example.com]
+2024-03-31 11:30:16,433 p=3840 u=student n=ansible | TASK [copy httpasswd to place] *****************************************************************************************************************
+2024-03-31 11:30:16,469 p=3840 u=student n=ansible | fatal: [serverb.lab.example.com]: FAILED! => {"msg": "The task includes an option with an undefined variable. The error was: 'secret_dir' is undefined\n\nThe error appears to be in '/home/student/data-review/playbook.yml': line 40, column 7, but may\nbe elsewhere in the file depending on the exact syntax problem.\n\nThe offending line appears to be:\n\n        mode: 0500\n    - name: copy httpasswd to place\n      ^ here\n"}
+2024-03-31 11:30:16,470 p=3840 u=student n=ansible | PLAY RECAP *************************************************************************************************************************************
+2024-03-31 11:30:16,470 p=3840 u=student n=ansible | serverb.lab.example.com    : ok=4    changed=2    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2024-03-31 11:32:21,251 p=3963 u=student n=ansible | PLAY [Install and configure the basic web server] **********************************************************************************************
+2024-03-31 11:32:21,261 p=3963 u=student n=ansible | TASK [Gathering Facts] *************************************************************************************************************************
+2024-03-31 11:32:22,552 p=3963 u=student n=ansible | ok: [serverb.lab.example.com]
+2024-03-31 11:32:22,560 p=3963 u=student n=ansible | TASK [Ensure the latest version of the necessary pakages are installed] ************************************************************************
+2024-03-31 11:32:24,129 p=3963 u=student n=ansible | ok: [serverb.lab.example.com]
+2024-03-31 11:32:24,142 p=3963 u=student n=ansible | TASK [configure web service] *******************************************************************************************************************
+2024-03-31 11:32:25,002 p=3963 u=student n=ansible | ok: [serverb.lab.example.com]
+2024-03-31 11:32:25,009 p=3963 u=student n=ansible | TASK [create secrets dir] **********************************************************************************************************************
+2024-03-31 11:32:25,379 p=3963 u=student n=ansible | ok: [serverb.lab.example.com]
+2024-03-31 11:32:25,386 p=3963 u=student n=ansible | TASK [copy httpasswd to place] *****************************************************************************************************************
+2024-03-31 11:32:26,392 p=3963 u=student n=ansible | changed: [serverb.lab.example.com]
+2024-03-31 11:32:26,399 p=3963 u=student n=ansible | TASK [ensure the .htaccess inthe place] ********************************************************************************************************
+2024-03-31 11:32:27,060 p=3963 u=student n=ansible | changed: [serverb.lab.example.com]
+2024-03-31 11:32:27,066 p=3963 u=student n=ansible | TASK [create index.html] ***********************************************************************************************************************
+2024-03-31 11:32:27,739 p=3963 u=student n=ansible | changed: [serverb.lab.example.com]
+2024-03-31 11:32:27,747 p=3963 u=student n=ansible | TASK [starts and enable firewall service] ******************************************************************************************************
+2024-03-31 11:32:27,785 p=3963 u=student n=ansible | fatal: [serverb.lab.example.com]: FAILED! => {"msg": "The task includes an option with an undefined variable. The error was: 'firewall_scv' is undefined\n\nThe error appears to be in '/home/student/data-review/playbook.yml': line 59, column 7, but may\nbe elsewhere in the file depending on the exact syntax problem.\n\nThe offending line appears to be:\n\n        mode: 0644\n    - name: starts and enable firewall service\n      ^ here\n"}
+2024-03-31 11:32:27,786 p=3963 u=student n=ansible | PLAY RECAP *************************************************************************************************************************************
+2024-03-31 11:32:27,786 p=3963 u=student n=ansible | serverb.lab.example.com    : ok=7    changed=3    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2024-03-31 11:33:59,715 p=4110 u=student n=ansible | PLAY [Install and configure the basic web server] **********************************************************************************************
+2024-03-31 11:33:59,724 p=4110 u=student n=ansible | TASK [Gathering Facts] *************************************************************************************************************************
+2024-03-31 11:34:00,984 p=4110 u=student n=ansible | ok: [serverb.lab.example.com]
+2024-03-31 11:34:00,991 p=4110 u=student n=ansible | TASK [Ensure the latest version of the necessary pakages are installed] ************************************************************************
+2024-03-31 11:34:02,536 p=4110 u=student n=ansible | ok: [serverb.lab.example.com]
+2024-03-31 11:34:02,543 p=4110 u=student n=ansible | TASK [configure web service] *******************************************************************************************************************
+2024-03-31 11:34:03,344 p=4110 u=student n=ansible | ok: [serverb.lab.example.com]
+2024-03-31 11:34:03,353 p=4110 u=student n=ansible | TASK [create secrets dir] **********************************************************************************************************************
+2024-03-31 11:34:03,716 p=4110 u=student n=ansible | ok: [serverb.lab.example.com]
+2024-03-31 11:34:03,722 p=4110 u=student n=ansible | TASK [copy httpasswd to place] *****************************************************************************************************************
+2024-03-31 11:34:04,600 p=4110 u=student n=ansible | ok: [serverb.lab.example.com]
+2024-03-31 11:34:04,607 p=4110 u=student n=ansible | TASK [ensure the .htaccess inthe place] ********************************************************************************************************
+2024-03-31 11:34:05,250 p=4110 u=student n=ansible | ok: [serverb.lab.example.com]
+2024-03-31 11:34:05,257 p=4110 u=student n=ansible | TASK [create index.html] ***********************************************************************************************************************
+2024-03-31 11:34:05,922 p=4110 u=student n=ansible | ok: [serverb.lab.example.com]
+2024-03-31 11:34:05,930 p=4110 u=student n=ansible | TASK [starts and enable firewall service] ******************************************************************************************************
+2024-03-31 11:34:06,687 p=4110 u=student n=ansible | ok: [serverb.lab.example.com]
+2024-03-31 11:34:06,694 p=4110 u=student n=ansible | TASK [starts and enable web service] ***********************************************************************************************************
+2024-03-31 11:34:07,900 p=4110 u=student n=ansible | changed: [serverb.lab.example.com]
+2024-03-31 11:34:07,909 p=4110 u=student n=ansible | TASK [allow web serice on firewall] ************************************************************************************************************
+2024-03-31 11:34:08,623 p=4110 u=student n=ansible | changed: [serverb.lab.example.com]
+2024-03-31 11:34:08,647 p=4110 u=student n=ansible | PLAY [test basic authen] ***********************************************************************************************************************
+2024-03-31 11:34:08,651 p=4110 u=student n=ansible | TASK [Gathering Facts] *************************************************************************************************************************
+2024-03-31 11:34:09,251 p=4110 u=student n=ansible | ok: [localhost]
+2024-03-31 11:34:09,260 p=4110 u=student n=ansible | TASK [connect to web server with basic authen] *************************************************************************************************
+2024-03-31 11:34:09,772 p=4110 u=student n=ansible | ok: [localhost]
+2024-03-31 11:34:09,780 p=4110 u=student n=ansible | TASK [print the auth_test content] *************************************************************************************************************
+2024-03-31 11:34:09,818 p=4110 u=student n=ansible | ok: [localhost] => {
+    "auth_test.content": "serverb.lab.example.com (172.25.250.11) has been customized by Ansible.\n"
+}
+2024-03-31 11:34:09,819 p=4110 u=student n=ansible | PLAY RECAP *************************************************************************************************************************************
+2024-03-31 11:34:09,819 p=4110 u=student n=ansible | localhost                  : ok=3    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-03-31 11:34:09,819 p=4110 u=student n=ansible | serverb.lab.example.com    : ok=10   changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   

@@ -1,0 +1,16 @@
+---
+- name: Install Apache and starts the service
+  hosts: webserver
+
+  tasks:
+    - name: Install Apache with custom facts
+      yum:
+        name: "{{ ansible_facts['ansible_local'] ['custom']['general']['package'] }}"
+        state: latest
+        
+    - name: Starts the Apache service
+      service:
+        name: "{{ ansible_facts['ansible_local'] ['custom']['general']['service'] }}"
+        state: "{{ ansible_facts['ansible_local'] ['custom']['general']['state'] }}"
+        enabled: "{{ ansible_facts['ansible_local'] ['custom']['general']['enabled'] }}"
+        

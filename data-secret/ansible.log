@@ -1,0 +1,34 @@
+2024-03-30 23:10:00,008 p=3599 u=student n=ansible | ERROR! vars file secret.yaml was not found
+Could not find file on the Ansible Controller.
+If you are using a module and expect the file to exist on the remote, see the remote_src option
+2024-03-30 23:10:35,528 p=3641 u=student n=ansible | playbook: create-user.yaml
+2024-03-30 23:10:59,228 p=3652 u=student n=ansible | ERROR! The vault password file /home/student/data-secret/promt was not found
+2024-03-30 23:11:17,483 p=3668 u=student n=ansible | playbook: create-user.yaml
+2024-03-30 23:11:39,331 p=3679 u=student n=ansible | PLAY [Create user account for all our server] **********************************************************************************************************************************
+2024-03-30 23:11:39,348 p=3679 u=student n=ansible | TASK [Gathering Facts] *********************************************************************************************************************************************************
+2024-03-30 23:11:41,008 p=3679 u=student n=ansible | ok: [servera.lab.example.com]
+2024-03-30 23:11:41,019 p=3679 u=student n=ansible | TASK [Create new user] *********************************************************************************************************************************************************
+2024-03-30 23:11:42,364 p=3679 u=student n=ansible | changed: [servera.lab.example.com]
+2024-03-30 23:11:42,366 p=3679 u=student n=ansible | PLAY RECAP *********************************************************************************************************************************************************************
+2024-03-30 23:11:42,366 p=3679 u=student n=ansible | servera.lab.example.com    : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-03-30 23:13:29,815 p=3786 u=student n=ansible | PLAY [Create user account for all our server] **********************************************************************************************************************************
+2024-03-30 23:13:29,824 p=3786 u=student n=ansible | TASK [Gathering Facts] *********************************************************************************************************************************************************
+2024-03-30 23:13:31,162 p=3786 u=student n=ansible | ok: [servera.lab.example.com]
+2024-03-30 23:13:31,169 p=3786 u=student n=ansible | TASK [Create new user] *********************************************************************************************************************************************************
+2024-03-30 23:13:32,433 p=3786 u=student n=ansible | changed: [servera.lab.example.com]
+2024-03-30 23:13:32,435 p=3786 u=student n=ansible | PLAY RECAP *********************************************************************************************************************************************************************
+2024-03-30 23:13:32,435 p=3786 u=student n=ansible | servera.lab.example.com    : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-03-30 23:14:32,486 p=3839 u=student n=ansible | PLAY [Create user account for all our server] **********************************************************************************************************************************
+2024-03-30 23:14:32,495 p=3839 u=student n=ansible | TASK [Gathering Facts] *********************************************************************************************************************************************************
+2024-03-30 23:14:33,861 p=3839 u=student n=ansible | ok: [servera.lab.example.com]
+2024-03-30 23:14:33,868 p=3839 u=student n=ansible | TASK [Create new user] *********************************************************************************************************************************************************
+2024-03-30 23:14:34,415 p=3839 u=student n=ansible | ok: [servera.lab.example.com]
+2024-03-30 23:14:34,417 p=3839 u=student n=ansible | PLAY RECAP *********************************************************************************************************************************************************************
+2024-03-30 23:14:34,417 p=3839 u=student n=ansible | servera.lab.example.com    : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-03-30 23:17:36,671 p=3983 u=student n=ansible | PLAY [Create user account for all our server] **********************************************************************************************************************************
+2024-03-30 23:17:36,681 p=3983 u=student n=ansible | TASK [Gathering Facts] *********************************************************************************************************************************************************
+2024-03-30 23:17:38,112 p=3983 u=student n=ansible | ok: [servera.lab.example.com]
+2024-03-30 23:17:38,119 p=3983 u=student n=ansible | TASK [Create new user] *********************************************************************************************************************************************************
+2024-03-30 23:17:39,244 p=3983 u=student n=ansible | changed: [servera.lab.example.com]
+2024-03-30 23:17:39,245 p=3983 u=student n=ansible | PLAY RECAP *********************************************************************************************************************************************************************
+2024-03-30 23:17:39,245 p=3983 u=student n=ansible | servera.lab.example.com    : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   

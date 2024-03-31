@@ -1,0 +1,13 @@
+---
+- name: Create user account for all our server
+  hosts: devservers
+  become: True
+  remote_user: devops
+  vars_files:
+    - secret.yml
+  tasks: 
+    - name: Create new user
+      user:
+        name: "{{ username }}"
+        password: "{{ pwhash }}"
+        #state: absent

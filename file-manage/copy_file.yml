@@ -1,0 +1,16 @@
+---
+- name: Copy file to remote host
+  hosts: all
+  remote_user: root
+
+  tasks:
+    - name: use the copy module to copy file/user.txt to remote host
+      copy:
+        src: files/users.txt
+        dest: /home/devops/users.txt
+        owner: devops
+        group: devops
+        mode: u+rx,g+wx,o+rwx
+        setype: samba_share_t
+
+

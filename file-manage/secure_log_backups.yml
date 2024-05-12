@@ -1,0 +1,15 @@
+---
+- name: use the fetch module to get secure log on remote hosts.
+  hosts: all
+  remote_user: root
+  
+  tasks:
+    - name: Fetsh /va/log/secure from remote host
+      fetch:
+        src: /var/log/secure
+        dest: secure-backups
+        flat: no
+
+
+
+

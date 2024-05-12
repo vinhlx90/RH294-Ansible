@@ -1,0 +1,16 @@
+---
+- name: use lineinfile module to add a line into the file users.txt on remote hosts
+  hosts: all
+  remote_user: root
+  tasks:
+    - name: add a single line into a text file
+      lineinfile:
+        path: /home/devops/users.txt
+        line: This line added by lineinfile module
+        state: present
+    - name: add a line into file with conditional
+      lineinfile:
+        path: /home/devops/users.txt
+        regexp: '^This'
+        insertafter: '^This'
+        line: This is second line added by lineinfile module

@@ -1,0 +1,12 @@
+---
+- name: Using file module to ensure SElinux file context
+  hosts: all
+  remote_user: root
+  tasks:
+    - name: SElinux file context is set to default
+      file:
+        path: /home/devops/users.txt
+        seuser: _default
+        setype: _default
+        selevel: _default
+        serole: _default

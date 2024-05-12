@@ -1,0 +1,12 @@
+---
+- name: user blockinfile module to add a block into file
+  hosts: all
+  remote_user: root
+  tasks:
+    - name: add a block in a file
+      blockinfile:
+        path: /home/devops/users.txt
+        block: |
+                This is a block added with two file
+                This havebeen added by using blockinfile module
+        state: present

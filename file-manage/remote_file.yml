@@ -1,0 +1,10 @@
+---
+- name: remote the create file
+  hosts: all
+  remote_user: root
+  tasks:
+    - name: remote users.txt file on remote hosts
+      file:
+        path: /home/devops/users.txt
+        state: absent
+

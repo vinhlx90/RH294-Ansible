@@ -1,0 +1,7 @@
+---
+- name: Configure Dev web server
+#1- configure dev  web server
+  hosts: dev_webserver
+  force_handlers: true
+  roles:
+    - apache.developer_configs

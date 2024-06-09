@@ -1,0 +1,46 @@
+---
+- name: Repository Configuration
+  hosts: all
+  vars:
+    custom_pkg: example-motd
+
+  tasks: 
+    - name: Gather info of install packages
+      package_facts:
+        manager: auto
+
+    - name: Show version of {{ custom_pkg }}
+      debug:
+        var: ansible_facts.packages[custom_pkg]
+      when: custom_pkg in ansible_facts.packages
+
+    - name: Ensure internal repo is exists in remote hosts
+      yum_repository:
+        name: example_internal
+        description: "Example Inc. Internal YUM repo"
+        baseurl: http://materials.example.com/yum/repository
+        gpgcheck: true
+        file: example
+
+    - name: Ensure GPG key is in placed
+      rpm_key:
+        state: present
+        key: http://materials.example.com/yum/repository/RPM-GPG-KEY-example
+
+    - name: Install {{ custom_pkg }}
+      package:
+        name: "{{ custom_pkg }}"
+        state: present
+
+    - name: Gather info of install packages
+      package_facts:
+        manager: auto
+
+    - name: Show version of {{ custom_pkg }}
+      debug:
+        var: ansible_facts.packages[custom_pkg]
+      when: custom_pkg in ansible_facts.packages
+
+
+
+

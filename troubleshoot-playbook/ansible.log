@@ -1,0 +1,939 @@
+2024-06-01 23:51:37,295 p=3332 u=student n=ansible | ERROR! We were unable to read either as JSON nor YAML, these are the errors we got from each:
+JSON: Expecting value: line 1 column 1 (char 0)
+
+Syntax Error while loading YAML.
+  mapping values are not allowed in this context
+
+The error appears to be in '/home/student/troubleshoot-playbook/samba.yml': line 8, column 30, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+    install_state: installed
+    random_var: This is colon: test
+                             ^ here
+
+2024-06-01 23:52:14,345 p=3343 u=student n=ansible | ERROR! We were unable to read either as JSON nor YAML, these are the errors we got from each:
+JSON: Expecting value: line 1 column 1 (char 0)
+
+Syntax Error while loading YAML.
+  mapping values are not allowed in this context
+
+The error appears to be in '/home/student/troubleshoot-playbook/samba.yml': line 8, column 30, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+    install_state: installed
+    random_var: This is colon: test
+                             ^ here
+
+2024-06-01 23:53:06,664 p=3405 u=student n=ansible | ERROR! We were unable to read either as JSON nor YAML, these are the errors we got from each:
+JSON: Expecting value: line 1 column 1 (char 0)
+
+Syntax Error while loading YAML.
+  did not find expected key
+
+The error appears to be in '/home/student/troubleshoot-playbook/samba.yml': line 44, column 4, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+
+   - name: deliver samba config
+   ^ here
+
+2024-06-01 23:56:35,805 p=3503 u=student n=ansible | ERROR! We were unable to read either as JSON nor YAML, these are the errors we got from each:
+JSON: Expecting value: line 1 column 1 (char 0)
+
+Syntax Error while loading YAML.
+  found unacceptable key (unhashable type: 'AnsibleMapping')
+
+The error appears to be in '/home/student/troubleshoot-playbook/samba.yml': line 14, column 15, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+      name: samba
+      state: {{ install_state }}
+              ^ here
+We could be wrong, but this one looks like it might be an issue with
+missing quotes. Always quote template expression brackets when they
+start a value. For instance:
+
+    with_items:
+      - {{ foo }}
+
+Should be written as:
+
+    with_items:
+      - "{{ foo }}"
+
+2024-06-01 23:56:44,598 p=3514 u=student n=ansible | ERROR! We were unable to read either as JSON nor YAML, these are the errors we got from each:
+JSON: Expecting value: line 1 column 1 (char 0)
+
+Syntax Error while loading YAML.
+  found unacceptable key (unhashable type: 'AnsibleMapping')
+
+The error appears to be in '/home/student/troubleshoot-playbook/samba.yml': line 14, column 15, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+      name: samba
+      state: {{ install_state }}
+              ^ here
+We could be wrong, but this one looks like it might be an issue with
+missing quotes. Always quote template expression brackets when they
+start a value. For instance:
+
+    with_items:
+      - {{ foo }}
+
+Should be written as:
+
+    with_items:
+      - "{{ foo }}"
+
+2024-06-01 23:57:48,341 p=3557 u=student n=ansible | playbook: samba.yml
+2024-06-01 23:57:57,355 p=3585 u=student n=ansible | ansible-playbook 2.9.21
+  config file = /home/student/troubleshoot-playbook/ansible.cfg
+  configured module search path = ['/home/student/.ansible/plugins/modules', '/usr/share/ansible/plugins/modules']
+  ansible python module location = /usr/lib/python3.6/site-packages/ansible
+  executable location = /usr/bin/ansible-playbook
+  python version = 3.6.8 (default, Mar 18 2021, 08:58:41) [GCC 8.4.1 20200928 (Red Hat 8.4.1-1)]
+2024-06-01 23:57:57,356 p=3585 u=student n=ansible | Using /home/student/troubleshoot-playbook/ansible.cfg as config file
+2024-06-01 23:57:57,675 p=3585 u=student n=ansible | Skipping callback 'actionable', as we already have a stdout callback.
+2024-06-01 23:57:57,675 p=3585 u=student n=ansible | Skipping callback 'counter_enabled', as we already have a stdout callback.
+2024-06-01 23:57:57,675 p=3585 u=student n=ansible | Skipping callback 'debug', as we already have a stdout callback.
+2024-06-01 23:57:57,675 p=3585 u=student n=ansible | Skipping callback 'dense', as we already have a stdout callback.
+2024-06-01 23:57:57,675 p=3585 u=student n=ansible | Skipping callback 'dense', as we already have a stdout callback.
+2024-06-01 23:57:57,675 p=3585 u=student n=ansible | Skipping callback 'full_skip', as we already have a stdout callback.
+2024-06-01 23:57:57,675 p=3585 u=student n=ansible | Skipping callback 'json', as we already have a stdout callback.
+2024-06-01 23:57:57,675 p=3585 u=student n=ansible | Skipping callback 'minimal', as we already have a stdout callback.
+2024-06-01 23:57:57,675 p=3585 u=student n=ansible | Skipping callback 'null', as we already have a stdout callback.
+2024-06-01 23:57:57,675 p=3585 u=student n=ansible | Skipping callback 'oneline', as we already have a stdout callback.
+2024-06-01 23:57:57,675 p=3585 u=student n=ansible | Skipping callback 'selective', as we already have a stdout callback.
+2024-06-01 23:57:57,675 p=3585 u=student n=ansible | Skipping callback 'skippy', as we already have a stdout callback.
+2024-06-01 23:57:57,676 p=3585 u=student n=ansible | Skipping callback 'stderr', as we already have a stdout callback.
+2024-06-01 23:57:57,676 p=3585 u=student n=ansible | Skipping callback 'unixy', as we already have a stdout callback.
+2024-06-01 23:57:57,676 p=3585 u=student n=ansible | Skipping callback 'yaml', as we already have a stdout callback.
+2024-06-01 23:57:57,676 p=3585 u=student n=ansible | PLAYBOOK: samba.yml ************************************************************************************************************************************************************
+2024-06-01 23:57:57,676 p=3585 u=student n=ansible | 1 plays in samba.yml
+2024-06-01 23:57:57,678 p=3585 u=student n=ansible | PLAY [Install a samba server] **************************************************************************************************************************************************
+2024-06-01 23:57:57,700 p=3585 u=student n=ansible | TASK [Gathering Facts] *********************************************************************************************************************************************************
+2024-06-01 23:58:19,497 p=3585 u=student n=ansible | fatal: [servera.lab.exammple.com]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: ssh: connect to host servera.lab.exammple.com port 22: Connection timed out", "unreachable": true}
+2024-06-01 23:58:19,498 p=3585 u=student n=ansible | PLAY RECAP *********************************************************************************************************************************************************************
+2024-06-01 23:58:19,499 p=3585 u=student n=ansible | servera.lab.exammple.com   : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+2024-06-02 00:03:51,767 p=3828 u=student n=ansible | PLAY [Install a samba server] **************************************************************************************************************************************************
+2024-06-02 00:03:51,776 p=3828 u=student n=ansible | TASK [Gathering Facts] *********************************************************************************************************************************************************
+2024-06-02 00:03:53,491 p=3828 u=student n=ansible | ok: [servera.lab.example.com]
+2024-06-02 00:03:53,500 p=3828 u=student n=ansible | TASK [install samba] ***********************************************************************************************************************************************************
+2024-06-02 00:03:59,720 p=3828 u=student n=ansible | changed: [servera.lab.example.com]
+2024-06-02 00:03:59,728 p=3828 u=student n=ansible | TASK [install firewalld] *******************************************************************************************************************************************************
+2024-06-02 00:04:01,586 p=3828 u=student n=ansible | ok: [servera.lab.example.com]
+2024-06-02 00:04:01,595 p=3828 u=student n=ansible | TASK [debug install_state variable] ********************************************************************************************************************************************
+2024-06-02 00:04:01,629 p=3828 u=student n=ansible | ok: [servera.lab.example.com] => {
+    "msg": "The state for the samba service is installed"
+}
+2024-06-02 00:04:01,637 p=3828 u=student n=ansible | TASK [start samba] *************************************************************************************************************************************************************
+2024-06-02 00:04:03,261 p=3828 u=student n=ansible | changed: [servera.lab.example.com]
+2024-06-02 00:04:03,268 p=3828 u=student n=ansible | TASK [start firewalld] *********************************************************************************************************************************************************
+2024-06-02 00:04:03,915 p=3828 u=student n=ansible | ok: [servera.lab.example.com]
+2024-06-02 00:04:03,923 p=3828 u=student n=ansible | TASK [configure firewall for samba] ********************************************************************************************************************************************
+2024-06-02 00:04:04,759 p=3828 u=student n=ansible | changed: [servera.lab.example.com]
+2024-06-02 00:04:04,768 p=3828 u=student n=ansible | TASK [deliver samba config] ****************************************************************************************************************************************************
+2024-06-02 00:04:04,883 p=3828 u=student n=ansible | fatal: [servera.lab.example.com]: FAILED! => {"changed": false, "msg": "Could not find or access 'samba.j2'\nSearched in:\n\t/home/student/troubleshoot-playbook/templates/samba.j2\n\t/home/student/troubleshoot-playbook/samba.j2\n\t/home/student/troubleshoot-playbook/templates/samba.j2\n\t/home/student/troubleshoot-playbook/samba.j2 on the Ansible Controller.\nIf you are using a module and expect the file to exist on the remote, see the remote_src option"}
+2024-06-02 00:04:04,885 p=3828 u=student n=ansible | PLAY RECAP *********************************************************************************************************************************************************************
+2024-06-02 00:04:04,885 p=3828 u=student n=ansible | servera.lab.example.com    : ok=7    changed=3    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2024-06-02 00:08:27,038 p=4135 u=student n=ansible | [WARNING]: Could not match supplied host pattern, ignoring: ist-task
+
+2024-06-02 00:08:27,038 p=4135 u=student n=ansible | ERROR! Specified hosts and/or --limit does not match any hosts
+2024-06-02 00:08:30,423 p=4143 u=student n=ansible | playbook: samba.yml
+2024-06-02 00:08:30,424 p=4143 u=student n=ansible |   play #1 (samba_servers): Install a samba server	TAGS: []
+2024-06-02 00:08:30,425 p=4143 u=student n=ansible |     tasks:
+      install samba	TAGS: []
+      install firewalld	TAGS: []
+      debug install_state variable	TAGS: []
+      start samba	TAGS: []
+      start firewalld	TAGS: []
+      configure firewall for samba	TAGS: []
+      deliver samba config	TAGS: []
+
+2024-06-02 00:09:01,295 p=4154 u=student n=ansible | PLAY [Install a samba server] **************************************************************************************************************************************************
+2024-06-02 00:09:01,301 p=4154 u=student n=ansible | PLAY RECAP *********************************************************************************************************************************************************************
+2024-06-02 00:09:01,302 p=4154 u=student n=ansible |  [ERROR]: No matching task "deliver sambe config" found. Note: --start-at-task can only follow static includes.
+
+2024-06-02 00:09:10,712 p=4167 u=student n=ansible | PLAY [Install a samba server] **************************************************************************************************************************************************
+2024-06-02 00:09:10,721 p=4167 u=student n=ansible | TASK [Gathering Facts] *********************************************************************************************************************************************************
+2024-06-02 00:09:12,152 p=4167 u=student n=ansible | ok: [servera.lab.example.com]
+2024-06-02 00:09:12,160 p=4167 u=student n=ansible | TASK [deliver samba config] ****************************************************************************************************************************************************
+2024-06-02 00:09:13,151 p=4167 u=student n=ansible | changed: [servera.lab.example.com]
+2024-06-02 00:09:13,152 p=4167 u=student n=ansible | PLAY RECAP *********************************************************************************************************************************************************************
+2024-06-02 00:09:13,152 p=4167 u=student n=ansible | servera.lab.example.com    : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-06-02 00:09:22,089 p=4219 u=student n=ansible | ERROR! the playbook: samba.ym could not be found
+2024-06-02 00:09:24,262 p=4227 u=student n=ansible | PLAY [Install a samba server] **************************************************************************************************************************************************
+2024-06-02 00:09:24,267 p=4227 u=student n=ansible | PLAY RECAP *********************************************************************************************************************************************************************
+2024-06-02 00:09:24,268 p=4227 u=student n=ansible |  [ERROR]: No matching task "deliver samba configl" found. Note: --start-at-task can only follow static includes.
+
+2024-06-02 00:09:30,179 p=4246 u=student n=ansible | PLAY [Install a samba server] **************************************************************************************************************************************************
+2024-06-02 00:09:30,188 p=4246 u=student n=ansible | TASK [Gathering Facts] *********************************************************************************************************************************************************
+2024-06-02 00:09:31,402 p=4246 u=student n=ansible | ok: [servera.lab.example.com]
+2024-06-02 00:09:31,409 p=4246 u=student n=ansible | TASK [install samba] ***********************************************************************************************************************************************************
+2024-06-02 00:09:33,134 p=4246 u=student n=ansible | ok: [servera.lab.example.com]
+2024-06-02 00:09:33,141 p=4246 u=student n=ansible | TASK [install firewalld] *******************************************************************************************************************************************************
+2024-06-02 00:09:34,687 p=4246 u=student n=ansible | ok: [servera.lab.example.com]
+2024-06-02 00:09:34,694 p=4246 u=student n=ansible | TASK [debug install_state variable] ********************************************************************************************************************************************
+2024-06-02 00:09:34,731 p=4246 u=student n=ansible | ok: [servera.lab.example.com] => {
+    "msg": "The state for the samba service is installed"
+}
+2024-06-02 00:09:34,739 p=4246 u=student n=ansible | TASK [start samba] *************************************************************************************************************************************************************
+2024-06-02 00:09:35,484 p=4246 u=student n=ansible | ok: [servera.lab.example.com]
+2024-06-02 00:09:35,490 p=4246 u=student n=ansible | TASK [start firewalld] *********************************************************************************************************************************************************
+2024-06-02 00:09:36,025 p=4246 u=student n=ansible | ok: [servera.lab.example.com]
+2024-06-02 00:09:36,032 p=4246 u=student n=ansible | TASK [configure firewall for samba] ********************************************************************************************************************************************
+2024-06-02 00:09:36,706 p=4246 u=student n=ansible | ok: [servera.lab.example.com]
+2024-06-02 00:09:36,714 p=4246 u=student n=ansible | TASK [deliver samba config] ****************************************************************************************************************************************************
+2024-06-02 00:09:37,623 p=4246 u=student n=ansible | ok: [servera.lab.example.com]
+2024-06-02 00:09:37,625 p=4246 u=student n=ansible | PLAY RECAP *********************************************************************************************************************************************************************
+2024-06-02 00:09:37,625 p=4246 u=student n=ansible | servera.lab.example.com    : ok=8    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-06-02 00:11:07,174 p=4350 u=student n=ansible | playbook: samba.yml
+2024-06-02 00:11:07,174 p=4350 u=student n=ansible |   play #1 (samba_servers): Install a samba server	TAGS: []
+2024-06-02 00:11:07,175 p=4350 u=student n=ansible |     tasks:
+      install samba	TAGS: []
+      install firewalld	TAGS: []
+      debug install_state variable	TAGS: []
+      start samba	TAGS: []
+      start firewalld	TAGS: []
+      configure firewall for samba	TAGS: []
+      deliver samba config	TAGS: []
+
+2024-06-02 09:05:43,487 p=9016 u=student n=ansible | PLAY [Install a samba server] **************************************************************************************************************************************************
+2024-06-02 09:05:52,772 p=9016 u=student n=ansible | Perform task: TASK: Gathering Facts (N)o/(y)es/(c)ontinue: *********************************************************************************************************************
+2024-06-02 09:05:52,777 p=9016 u=student n=ansible | TASK [Gathering Facts] *********************************************************************************************************************************************************
+2024-06-02 09:05:54,083 p=9016 u=student n=ansible | ok: [servera.lab.example.com]
+2024-06-02 09:06:02,434 p=9016 u=student n=ansible | Perform task: TASK: install samba (N)o/(y)es/(c)ontinue: ***********************************************************************************************************************
+2024-06-02 09:06:02,442 p=9016 u=student n=ansible | TASK [install samba] ***********************************************************************************************************************************************************
+2024-06-02 09:06:04,168 p=9016 u=student n=ansible | ok: [servera.lab.example.com]
+2024-06-02 09:06:04,175 p=9016 u=student n=ansible | TASK [install firewalld] *******************************************************************************************************************************************************
+2024-06-02 09:06:05,753 p=9016 u=student n=ansible | ok: [servera.lab.example.com]
+2024-06-02 09:06:05,760 p=9016 u=student n=ansible | TASK [debug install_state variable] ********************************************************************************************************************************************
+2024-06-02 09:06:05,794 p=9016 u=student n=ansible | ok: [servera.lab.example.com] => {
+    "msg": "The state for the samba service is installed"
+}
+2024-06-02 09:06:05,801 p=9016 u=student n=ansible | TASK [start samba] *************************************************************************************************************************************************************
+2024-06-02 09:06:06,543 p=9016 u=student n=ansible | ok: [servera.lab.example.com]
+2024-06-02 09:06:06,549 p=9016 u=student n=ansible | TASK [start firewalld] *********************************************************************************************************************************************************
+2024-06-02 09:06:07,056 p=9016 u=student n=ansible | ok: [servera.lab.example.com]
+2024-06-02 09:06:07,062 p=9016 u=student n=ansible | TASK [configure firewall for samba] ********************************************************************************************************************************************
+2024-06-02 09:06:07,699 p=9016 u=student n=ansible | ok: [servera.lab.example.com]
+2024-06-02 09:06:07,707 p=9016 u=student n=ansible | TASK [deliver samba config] ****************************************************************************************************************************************************
+2024-06-02 09:06:08,594 p=9016 u=student n=ansible | ok: [servera.lab.example.com]
+2024-06-02 09:06:08,596 p=9016 u=student n=ansible | PLAY RECAP *********************************************************************************************************************************************************************
+2024-06-02 09:06:08,596 p=9016 u=student n=ansible | servera.lab.example.com    : ok=8    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-06-02 09:06:26,005 p=9104 u=student n=ansible | PLAY [Install a samba server] **************************************************************************************************************************************************
+2024-06-02 09:06:28,251 p=9104 u=student n=ansible | Perform task: TASK: Gathering Facts (N)o/(y)es/(c)ontinue: *********************************************************************************************************************
+2024-06-02 09:06:29,491 p=9104 u=student n=ansible | Perform task: TASK: install samba (N)o/(y)es/(c)ontinue: ***********************************************************************************************************************
+2024-06-02 09:06:34,621 p=9104 u=student n=ansible | Perform task: TASK: install firewalld (N)o/(y)es/(c)ontinue: *******************************************************************************************************************
+2024-06-02 09:06:34,626 p=9104 u=student n=ansible | TASK [install firewalld] *******************************************************************************************************************************************************
+2024-06-02 09:06:37,281 p=9104 u=student n=ansible | ok: [servera.lab.example.com]
+2024-06-02 09:06:41,441 p=9104 u=student n=ansible | Perform task: TASK: debug install_state variable (N)o/(y)es/(c)ontinue: ********************************************************************************************************
+2024-06-02 09:06:49,373 p=9104 u=student n=ansible | Perform task: TASK: start samba (N)o/(y)es/(c)ontinue: *************************************************************************************************************************
+2024-06-02 09:06:49,376 p=9104 u=student n=ansible | TASK [start samba] *************************************************************************************************************************************************************
+2024-06-02 09:06:50,478 p=9104 u=student n=ansible | ok: [servera.lab.example.com]
+2024-06-02 09:06:53,131 p=9104 u=student n=ansible | Perform task: TASK: start firewalld (N)o/(y)es/(c)ontinue: *********************************************************************************************************************
+2024-06-02 09:06:53,134 p=9104 u=student n=ansible | TASK [start firewalld] *********************************************************************************************************************************************************
+2024-06-02 09:06:54,041 p=9104 u=student n=ansible | ok: [servera.lab.example.com]
+2024-06-02 09:06:56,051 p=9104 u=student n=ansible | Perform task: TASK: configure firewall for samba (N)o/(y)es/(c)ontinue: ********************************************************************************************************
+2024-06-02 09:06:56,054 p=9104 u=student n=ansible | TASK [configure firewall for samba] ********************************************************************************************************************************************
+2024-06-02 09:06:56,715 p=9104 u=student n=ansible | ok: [servera.lab.example.com]
+2024-06-02 09:06:58,061 p=9104 u=student n=ansible | Perform task: TASK: deliver samba config (N)o/(y)es/(c)ontinue: ****************************************************************************************************************
+2024-06-02 09:06:58,064 p=9104 u=student n=ansible | PLAY RECAP *********************************************************************************************************************************************************************
+2024-06-02 09:06:58,064 p=9104 u=student n=ansible | servera.lab.example.com    : ok=4    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-06-02 09:08:03,040 p=9223 u=student n=ansible | playbook: samba.yml
+2024-06-02 09:08:10,391 p=9234 u=student n=ansible | PLAY [Install a samba server] **************************************************************************************************************************************************
+2024-06-02 09:08:12,986 p=9234 u=student n=ansible | Perform task: TASK: Gathering Facts (N)o/(y)es/(c)ontinue: *********************************************************************************************************************
+2024-06-02 09:08:17,871 p=9234 u=student n=ansible | Perform task: TASK: install samba (N)o/(y)es/(c)ontinue: ***********************************************************************************************************************
+2024-06-02 09:08:19,889 p=9234 u=student n=ansible | Perform task: TASK: install firewalld (N)o/(y)es/(c)ontinue: *******************************************************************************************************************
+2024-06-02 09:08:25,736 p=9234 u=student n=ansible | Perform task: TASK: debug install_state variable (N)o/(y)es/(c)ontinue: ********************************************************************************************************
+2024-06-02 09:08:25,741 p=9234 u=student n=ansible | TASK [debug install_state variable] ********************************************************************************************************************************************
+2024-06-02 09:08:25,780 p=9234 u=student n=ansible | skipping: [servera.lab.example.com]
+2024-06-02 09:08:51,761 p=9234 u=student n=ansible | Perform task: TASK: start samba (N)o/(y)es/(c)ontinue: *************************************************************************************************************************
+2024-06-02 09:08:55,903 p=9234 u=student n=ansible | Perform task: TASK: start firewalld (N)o/(y)es/(c)ontinue: *********************************************************************************************************************
+2024-06-02 09:08:55,906 p=9234 u=student n=ansible | TASK [start firewalld] *********************************************************************************************************************************************************
+2024-06-02 09:08:57,566 p=9234 u=student n=ansible | ok: [servera.lab.example.com]
+2024-06-02 09:08:57,569 p=9234 u=student n=ansible | TASK [configure firewall for samba] ********************************************************************************************************************************************
+2024-06-02 09:08:58,188 p=9234 u=student n=ansible | ok: [servera.lab.example.com]
+2024-06-02 09:08:58,191 p=9234 u=student n=ansible | TASK [deliver samba config] ****************************************************************************************************************************************************
+2024-06-02 09:08:59,053 p=9234 u=student n=ansible | ok: [servera.lab.example.com]
+2024-06-02 09:08:59,055 p=9234 u=student n=ansible | PLAY RECAP *********************************************************************************************************************************************************************
+2024-06-02 09:08:59,055 p=9234 u=student n=ansible | servera.lab.example.com    : ok=3    changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+2024-06-02 09:10:08,110 p=9343 u=student n=ansible | PLAY [Install a samba server] **************************************************************************************************************************************************
+2024-06-02 09:10:08,119 p=9343 u=student n=ansible | TASK [Gathering Facts] *********************************************************************************************************************************************************
+2024-06-02 09:10:09,423 p=9343 u=student n=ansible | ok: [servera.lab.example.com]
+2024-06-02 09:10:09,430 p=9343 u=student n=ansible | TASK [install samba] ***********************************************************************************************************************************************************
+2024-06-02 09:10:12,312 p=9343 u=student n=ansible | changed: [servera.lab.example.com]
+2024-06-02 09:10:12,320 p=9343 u=student n=ansible | TASK [install firewalld] *******************************************************************************************************************************************************
+2024-06-02 09:10:13,938 p=9343 u=student n=ansible | ok: [servera.lab.example.com]
+2024-06-02 09:10:13,947 p=9343 u=student n=ansible | TASK [debug install_state variable] ********************************************************************************************************************************************
+2024-06-02 09:10:13,986 p=9343 u=student n=ansible | skipping: [servera.lab.example.com]
+2024-06-02 09:10:13,997 p=9343 u=student n=ansible | TASK [start samba] *************************************************************************************************************************************************************
+2024-06-02 09:10:14,741 p=9343 u=student n=ansible | fatal: [servera.lab.example.com]: FAILED! => {"changed": false, "msg": "Could not find the requested service smb: host"}
+2024-06-02 09:10:14,742 p=9343 u=student n=ansible | PLAY RECAP *********************************************************************************************************************************************************************
+2024-06-02 09:10:14,742 p=9343 u=student n=ansible | servera.lab.example.com    : ok=3    changed=1    unreachable=0    failed=1    skipped=1    rescued=0    ignored=0   
+2024-06-02 09:12:36,029 p=9451 u=student n=ansible | PLAY [Install a samba server] **************************************************************************************************************************************************
+2024-06-02 09:12:36,037 p=9451 u=student n=ansible | TASK [Gathering Facts] *********************************************************************************************************************************************************
+2024-06-02 09:12:37,360 p=9451 u=student n=ansible | ok: [servera.lab.example.com]
+2024-06-02 09:12:37,368 p=9451 u=student n=ansible | TASK [install samba] ***********************************************************************************************************************************************************
+2024-06-02 09:12:40,301 p=9451 u=student n=ansible | changed: [servera.lab.example.com]
+2024-06-02 09:12:40,308 p=9451 u=student n=ansible | TASK [install firewalld] *******************************************************************************************************************************************************
+2024-06-02 09:12:41,872 p=9451 u=student n=ansible | ok: [servera.lab.example.com]
+2024-06-02 09:12:41,879 p=9451 u=student n=ansible | TASK [debug install_state variable] ********************************************************************************************************************************************
+2024-06-02 09:12:41,914 p=9451 u=student n=ansible | skipping: [servera.lab.example.com]
+2024-06-02 09:12:41,921 p=9451 u=student n=ansible | TASK [start samba] *************************************************************************************************************************************************************
+2024-06-02 09:12:42,957 p=9451 u=student n=ansible | changed: [servera.lab.example.com]
+2024-06-02 09:12:42,964 p=9451 u=student n=ansible | TASK [start firewalld] *********************************************************************************************************************************************************
+2024-06-02 09:12:43,498 p=9451 u=student n=ansible | ok: [servera.lab.example.com]
+2024-06-02 09:12:43,505 p=9451 u=student n=ansible | TASK [configure firewall for samba] ********************************************************************************************************************************************
+2024-06-02 09:12:44,160 p=9451 u=student n=ansible | ok: [servera.lab.example.com]
+2024-06-02 09:12:44,168 p=9451 u=student n=ansible | TASK [deliver samba config] ****************************************************************************************************************************************************
+2024-06-02 09:12:45,047 p=9451 u=student n=ansible | ok: [servera.lab.example.com]
+2024-06-02 09:12:45,049 p=9451 u=student n=ansible | PLAY RECAP *********************************************************************************************************************************************************************
+2024-06-02 09:12:45,049 p=9451 u=student n=ansible | servera.lab.example.com    : ok=7    changed=2    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+2024-06-02 09:16:18,235 p=9610 u=student n=ansible | PLAY [Install a samba server] **************************************************************************************************************************************************
+2024-06-02 09:16:18,244 p=9610 u=student n=ansible | TASK [Gathering Facts] *********************************************************************************************************************************************************
+2024-06-02 09:16:19,556 p=9610 u=student n=ansible | ok: [servera.lab.example.com]
+2024-06-02 09:16:19,566 p=9610 u=student n=ansible | TASK [print fqdn of remote host] ***********************************************************************************************************************************************
+2024-06-02 09:16:19,603 p=9610 u=student n=ansible | ok: [servera.lab.example.com] => {
+    "msg": "This is servera.lab.example.com"
+}
+2024-06-02 09:16:19,610 p=9610 u=student n=ansible | TASK [Display output] **********************************************************************************************************************************************************
+2024-06-02 09:16:19,626 p=9610 u=student n=ansible | skipping: [servera.lab.example.com]
+2024-06-02 09:16:19,633 p=9610 u=student n=ansible | TASK [install samba] ***********************************************************************************************************************************************************
+2024-06-02 09:16:21,231 p=9610 u=student n=ansible | ok: [servera.lab.example.com]
+2024-06-02 09:16:21,238 p=9610 u=student n=ansible | TASK [install firewalld] *******************************************************************************************************************************************************
+2024-06-02 09:16:22,697 p=9610 u=student n=ansible | ok: [servera.lab.example.com]
+2024-06-02 09:16:22,704 p=9610 u=student n=ansible | TASK [debug install_state variable] ********************************************************************************************************************************************
+2024-06-02 09:16:22,738 p=9610 u=student n=ansible | ok: [servera.lab.example.com] => {
+    "msg": "The state for the samba service is installed"
+}
+2024-06-02 09:16:22,745 p=9610 u=student n=ansible | TASK [start samba] *************************************************************************************************************************************************************
+2024-06-02 09:16:23,459 p=9610 u=student n=ansible | ok: [servera.lab.example.com]
+2024-06-02 09:16:23,466 p=9610 u=student n=ansible | TASK [start firewalld] *********************************************************************************************************************************************************
+2024-06-02 09:16:23,993 p=9610 u=student n=ansible | ok: [servera.lab.example.com]
+2024-06-02 09:16:24,003 p=9610 u=student n=ansible | TASK [configure firewall for samba] ********************************************************************************************************************************************
+2024-06-02 09:16:24,649 p=9610 u=student n=ansible | ok: [servera.lab.example.com]
+2024-06-02 09:16:24,656 p=9610 u=student n=ansible | TASK [deliver samba config] ****************************************************************************************************************************************************
+2024-06-02 09:16:25,536 p=9610 u=student n=ansible | ok: [servera.lab.example.com]
+2024-06-02 09:16:25,538 p=9610 u=student n=ansible | PLAY RECAP *********************************************************************************************************************************************************************
+2024-06-02 09:16:25,538 p=9610 u=student n=ansible | servera.lab.example.com    : ok=9    changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+2024-06-02 09:17:21,012 p=9743 u=student n=ansible | PLAY [Install a samba server] **************************************************************************************************************************************************
+2024-06-02 09:17:21,021 p=9743 u=student n=ansible | TASK [Gathering Facts] *********************************************************************************************************************************************************
+2024-06-02 09:17:22,089 p=9743 u=student n=ansible | ok: [servera.lab.example.com]
+2024-06-02 09:17:22,096 p=9743 u=student n=ansible | TASK [print fqdn of remote host] ***********************************************************************************************************************************************
+2024-06-02 09:17:22,133 p=9743 u=student n=ansible | ok: [servera.lab.example.com] => {
+    "msg": "This is total mem 182"
+}
+2024-06-02 09:17:22,140 p=9743 u=student n=ansible | TASK [Display output] **********************************************************************************************************************************************************
+2024-06-02 09:17:22,155 p=9743 u=student n=ansible | skipping: [servera.lab.example.com]
+2024-06-02 09:17:22,163 p=9743 u=student n=ansible | TASK [install samba] ***********************************************************************************************************************************************************
+2024-06-02 09:17:23,898 p=9743 u=student n=ansible | ok: [servera.lab.example.com]
+2024-06-02 09:17:23,905 p=9743 u=student n=ansible | TASK [install firewalld] *******************************************************************************************************************************************************
+2024-06-02 09:17:25,456 p=9743 u=student n=ansible | ok: [servera.lab.example.com]
+2024-06-02 09:17:25,463 p=9743 u=student n=ansible | TASK [debug install_state variable] ********************************************************************************************************************************************
+2024-06-02 09:17:25,499 p=9743 u=student n=ansible | ok: [servera.lab.example.com] => {
+    "msg": "The state for the samba service is installed"
+}
+2024-06-02 09:17:25,506 p=9743 u=student n=ansible | TASK [start samba] *************************************************************************************************************************************************************
+2024-06-02 09:17:26,247 p=9743 u=student n=ansible | ok: [servera.lab.example.com]
+2024-06-02 09:17:26,254 p=9743 u=student n=ansible | TASK [start firewalld] *********************************************************************************************************************************************************
+2024-06-02 09:17:26,764 p=9743 u=student n=ansible | ok: [servera.lab.example.com]
+2024-06-02 09:17:26,771 p=9743 u=student n=ansible | TASK [configure firewall for samba] ********************************************************************************************************************************************
+2024-06-02 09:17:27,437 p=9743 u=student n=ansible | ok: [servera.lab.example.com]
+2024-06-02 09:17:27,445 p=9743 u=student n=ansible | TASK [deliver samba config] ****************************************************************************************************************************************************
+2024-06-02 09:17:28,325 p=9743 u=student n=ansible | ok: [servera.lab.example.com]
+2024-06-02 09:17:28,329 p=9743 u=student n=ansible | PLAY RECAP *********************************************************************************************************************************************************************
+2024-06-02 09:17:28,329 p=9743 u=student n=ansible | servera.lab.example.com    : ok=9    changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+2024-06-02 09:20:22,413 p=9892 u=student n=ansible | PLAY [Install a samba server] **************************************************************************************************************************************************
+2024-06-02 09:20:22,422 p=9892 u=student n=ansible | TASK [Gathering Facts] *********************************************************************************************************************************************************
+2024-06-02 09:20:23,718 p=9892 u=student n=ansible | ok: [servera.lab.example.com]
+2024-06-02 09:20:23,725 p=9892 u=student n=ansible | TASK [install samba] ***********************************************************************************************************************************************************
+2024-06-02 09:20:24,505 p=9892 u=student n=ansible | fatal: [servera.lab.example.com]: FAILED! => {"changed": false, "msg": "Unsupported parameters for (dnf) module: register Supported parameters include: allow_downgrade, autoremove, bugfix, conf_file, disable_excludes, disable_gpg_check, disable_plugin, disablerepo, download_dir, download_only, enable_plugin, enablerepo, exclude, install_repoquery, install_weak_deps, installroot, list, lock_timeout, name, releasever, security, skip_broken, state, update_cache, update_only, validate_certs"}
+2024-06-02 09:20:24,507 p=9892 u=student n=ansible | PLAY RECAP *********************************************************************************************************************************************************************
+2024-06-02 09:20:24,507 p=9892 u=student n=ansible | servera.lab.example.com    : ok=1    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2024-06-02 09:21:28,820 p=9954 u=student n=ansible | PLAY [Install a samba server] **************************************************************************************************************************************************
+2024-06-02 09:21:28,829 p=9954 u=student n=ansible | TASK [Gathering Facts] *********************************************************************************************************************************************************
+2024-06-02 09:21:30,159 p=9954 u=student n=ansible | ok: [servera.lab.example.com]
+2024-06-02 09:21:30,166 p=9954 u=student n=ansible | TASK [install samba] ***********************************************************************************************************************************************************
+2024-06-02 09:21:31,808 p=9954 u=student n=ansible | ok: [servera.lab.example.com]
+2024-06-02 09:21:31,815 p=9954 u=student n=ansible | TASK [install firewalld] *******************************************************************************************************************************************************
+2024-06-02 09:21:33,318 p=9954 u=student n=ansible | ok: [servera.lab.example.com]
+2024-06-02 09:21:33,326 p=9954 u=student n=ansible | TASK [debug install_state variable] ********************************************************************************************************************************************
+2024-06-02 09:21:33,360 p=9954 u=student n=ansible | ok: [servera.lab.example.com] => {
+    "msg": "The state for the samba service is installed"
+}
+2024-06-02 09:21:33,368 p=9954 u=student n=ansible | TASK [start samba] *************************************************************************************************************************************************************
+2024-06-02 09:21:34,113 p=9954 u=student n=ansible | ok: [servera.lab.example.com]
+2024-06-02 09:21:34,120 p=9954 u=student n=ansible | TASK [display output] **********************************************************************************************************************************************************
+2024-06-02 09:21:34,134 p=9954 u=student n=ansible | skipping: [servera.lab.example.com]
+2024-06-02 09:21:34,140 p=9954 u=student n=ansible | TASK [start firewalld] *********************************************************************************************************************************************************
+2024-06-02 09:21:34,649 p=9954 u=student n=ansible | ok: [servera.lab.example.com]
+2024-06-02 09:21:34,657 p=9954 u=student n=ansible | TASK [configure firewall for samba] ********************************************************************************************************************************************
+2024-06-02 09:21:35,304 p=9954 u=student n=ansible | ok: [servera.lab.example.com]
+2024-06-02 09:21:35,312 p=9954 u=student n=ansible | TASK [deliver samba config] ****************************************************************************************************************************************************
+2024-06-02 09:21:36,191 p=9954 u=student n=ansible | ok: [servera.lab.example.com]
+2024-06-02 09:21:36,194 p=9954 u=student n=ansible | PLAY RECAP *********************************************************************************************************************************************************************
+2024-06-02 09:21:36,194 p=9954 u=student n=ansible | servera.lab.example.com    : ok=8    changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+2024-06-02 09:21:47,013 p=10044 u=student n=ansible | ansible-playbook 2.9.21
+  config file = /home/student/troubleshoot-playbook/ansible.cfg
+  configured module search path = ['/home/student/.ansible/plugins/modules', '/usr/share/ansible/plugins/modules']
+  ansible python module location = /usr/lib/python3.6/site-packages/ansible
+  executable location = /usr/bin/ansible-playbook
+  python version = 3.6.8 (default, Mar 18 2021, 08:58:41) [GCC 8.4.1 20200928 (Red Hat 8.4.1-1)]
+2024-06-02 09:21:47,013 p=10044 u=student n=ansible | Using /home/student/troubleshoot-playbook/ansible.cfg as config file
+2024-06-02 09:21:47,252 p=10044 u=student n=ansible | Skipping callback 'actionable', as we already have a stdout callback.
+2024-06-02 09:21:47,252 p=10044 u=student n=ansible | Skipping callback 'counter_enabled', as we already have a stdout callback.
+2024-06-02 09:21:47,253 p=10044 u=student n=ansible | Skipping callback 'debug', as we already have a stdout callback.
+2024-06-02 09:21:47,253 p=10044 u=student n=ansible | Skipping callback 'dense', as we already have a stdout callback.
+2024-06-02 09:21:47,253 p=10044 u=student n=ansible | Skipping callback 'dense', as we already have a stdout callback.
+2024-06-02 09:21:47,253 p=10044 u=student n=ansible | Skipping callback 'full_skip', as we already have a stdout callback.
+2024-06-02 09:21:47,253 p=10044 u=student n=ansible | Skipping callback 'json', as we already have a stdout callback.
+2024-06-02 09:21:47,253 p=10044 u=student n=ansible | Skipping callback 'minimal', as we already have a stdout callback.
+2024-06-02 09:21:47,253 p=10044 u=student n=ansible | Skipping callback 'null', as we already have a stdout callback.
+2024-06-02 09:21:47,253 p=10044 u=student n=ansible | Skipping callback 'oneline', as we already have a stdout callback.
+2024-06-02 09:21:47,253 p=10044 u=student n=ansible | Skipping callback 'selective', as we already have a stdout callback.
+2024-06-02 09:21:47,253 p=10044 u=student n=ansible | Skipping callback 'skippy', as we already have a stdout callback.
+2024-06-02 09:21:47,253 p=10044 u=student n=ansible | Skipping callback 'stderr', as we already have a stdout callback.
+2024-06-02 09:21:47,253 p=10044 u=student n=ansible | Skipping callback 'unixy', as we already have a stdout callback.
+2024-06-02 09:21:47,253 p=10044 u=student n=ansible | Skipping callback 'yaml', as we already have a stdout callback.
+2024-06-02 09:21:47,253 p=10044 u=student n=ansible | PLAYBOOK: samba.yml ************************************************************************************************************************************************************
+2024-06-02 09:21:47,254 p=10044 u=student n=ansible | 1 plays in samba.yml
+2024-06-02 09:21:47,256 p=10044 u=student n=ansible | PLAY [Install a samba server] **************************************************************************************************************************************************
+2024-06-02 09:21:47,264 p=10044 u=student n=ansible | TASK [Gathering Facts] *********************************************************************************************************************************************************
+2024-06-02 09:21:48,321 p=10044 u=student n=ansible | ok: [servera.lab.example.com]
+2024-06-02 09:21:48,322 p=10044 u=student n=ansible | META: ran handlers
+2024-06-02 09:21:48,329 p=10044 u=student n=ansible | TASK [install samba] ***********************************************************************************************************************************************************
+2024-06-02 09:21:49,986 p=10044 u=student n=ansible | ok: [servera.lab.example.com] => {"changed": false, "msg": "Nothing to do", "rc": 0, "results": []}
+2024-06-02 09:21:49,993 p=10044 u=student n=ansible | TASK [install firewalld] *******************************************************************************************************************************************************
+2024-06-02 09:21:51,594 p=10044 u=student n=ansible | ok: [servera.lab.example.com] => {"changed": false, "msg": "Nothing to do", "rc": 0, "results": []}
+2024-06-02 09:21:51,602 p=10044 u=student n=ansible | TASK [debug install_state variable] ********************************************************************************************************************************************
+2024-06-02 09:21:51,638 p=10044 u=student n=ansible | ok: [servera.lab.example.com] => {
+    "msg": "The state for the samba service is installed"
+}
+2024-06-02 09:21:51,645 p=10044 u=student n=ansible | TASK [start samba] *************************************************************************************************************************************************************
+2024-06-02 09:21:52,358 p=10044 u=student n=ansible | ok: [servera.lab.example.com] => {"changed": false, "enabled": true, "name": "smb", "state": "started", "status": {"ActiveEnterTimestamp": "Sun 2024-06-02 09:12:42 EDT", "ActiveEnterTimestampMonotonic": "37028735068", "ActiveExitTimestampMonotonic": "0", "ActiveState": "active", "After": "sysinit.target system.slice winbind.service nmb.service systemd-journald.socket network.target network-online.target basic.target", "AllowIsolate": "no", "AllowedCPUs": "", "AllowedMemoryNodes": "", "AmbientCapabilities": "", "AssertResult": "yes", "AssertTimestamp": "Sun 2024-06-02 09:12:42 EDT", "AssertTimestampMonotonic": "37028666676", "Before": "multi-user.target shutdown.target", "BlockIOAccounting": "no", "BlockIOWeight": "[not set]", "CPUAccounting": "no", "CPUAffinity": "", "CPUAffinityFromNUMA": "no", "CPUQuotaPerSecUSec": "infinity", "CPUQuotaPeriodUSec": "infinity", "CPUSchedulingPolicy": "0", "CPUSchedulingPriority": "0", "CPUSchedulingResetOnFork": "no", "CPUShares": "[not set]", "CPUUsageNSec": "[not set]", "CPUWeight": "[not set]", "CacheDirectoryMode": "0755", "CanFreeze": "yes", "CanIsolate": "no", "CanReload": "yes", "CanStart": "yes", "CanStop": "yes", "CapabilityBoundingSet": "cap_chown cap_dac_override cap_dac_read_search cap_fowner cap_fsetid cap_kill cap_setgid cap_setuid cap_setpcap cap_linux_immutable cap_net_bind_service cap_net_broadcast cap_net_admin cap_net_raw cap_ipc_lock cap_ipc_owner cap_sys_module cap_sys_rawio cap_sys_chroot cap_sys_ptrace cap_sys_pacct cap_sys_admin cap_sys_boot cap_sys_nice cap_sys_resource cap_sys_time cap_sys_tty_config cap_mknod cap_lease cap_audit_write cap_audit_control cap_setfcap cap_mac_override cap_mac_admin cap_syslog cap_wake_alarm cap_block_suspend cap_audit_read cap_perfmon", "CollectMode": "inactive", "ConditionResult": "yes", "ConditionTimestamp": "Sun 2024-06-02 09:12:42 EDT", "ConditionTimestampMonotonic": "37028666676", "ConfigurationDirectoryMode": "0755", "Conflicts": "shutdown.target", "ControlGroup": "/system.slice/smb.service", "ControlPID": "0", "DefaultDependencies": "yes", "DefaultMemoryLow": "0", "DefaultMemoryMin": "0", "Delegate": "no", "Description": "Samba SMB Daemon", "DevicePolicy": "auto", "Documentation": "man:smbd(8) man:samba(7) man:smb.conf(5)", "DynamicUser": "no", "EffectiveCPUs": "", "EffectiveMemoryNodes": "", "Environment": "KRB5CCNAME=FILE:/run/samba/krb5cc_samba", "EnvironmentFiles": "/etc/sysconfig/samba (ignore_errors=yes)", "ExecMainCode": "0", "ExecMainExitTimestampMonotonic": "0", "ExecMainPID": "31240", "ExecMainStartTimestamp": "Sun 2024-06-02 09:12:42 EDT", "ExecMainStartTimestampMonotonic": "37028667512", "ExecMainStatus": "0", "ExecReload": "{ path=/bin/kill ; argv[]=/bin/kill -HUP $MAINPID ; ignore_errors=no ; start_time=[n/a] ; stop_time=[n/a] ; pid=0 ; code=(null) ; status=0/0 }", "ExecStart": "{ path=/usr/sbin/smbd ; argv[]=/usr/sbin/smbd --foreground --no-process-group $SMBDOPTIONS ; ignore_errors=no ; start_time=[Sun 2024-06-02 09:12:42 EDT] ; stop_time=[n/a] ; pid=31240 ; code=(null) ; status=0/0 }", "FailureAction": "none", "FileDescriptorStoreMax": "0", "FragmentPath": "/usr/lib/systemd/system/smb.service", "FreezerState": "running", "GID": "[not set]", "GuessMainPID": "yes", "IOAccounting": "no", "IOSchedulingClass": "0", "IOSchedulingPriority": "0", "IOWeight": "[not set]", "IPAccounting": "no", "IPEgressBytes": "18446744073709551615", "IPEgressPackets": "18446744073709551615", "IPIngressBytes": "18446744073709551615", "IPIngressPackets": "18446744073709551615", "Id": "smb.service", "IgnoreOnIsolate": "no", "IgnoreSIGPIPE": "yes", "InactiveEnterTimestampMonotonic": "0", "InactiveExitTimestamp": "Sun 2024-06-02 09:12:42 EDT", "InactiveExitTimestampMonotonic": "37028667549", "InvocationID": "d574896a6a0646e6b0aa6c60c7b185d9", "JobRunningTimeoutUSec": "infinity", "JobTimeoutAction": "none", "JobTimeoutUSec": "infinity", "KeyringMode": "private", "KillMode": "control-group", "KillSignal": "15", "LimitAS": "infinity", "LimitASSoft": "infinity", "LimitCORE": "infinity", "LimitCORESoft": "infinity", "LimitCPU": "infinity", "LimitCPUSoft": "infinity", "LimitDATA": "infinity", "LimitDATASoft": "infinity", "LimitFSIZE": "infinity", "LimitFSIZESoft": "infinity", "LimitLOCKS": "infinity", "LimitLOCKSSoft": "infinity", "LimitMEMLOCK": "65536", "LimitMEMLOCKSoft": "65536", "LimitMSGQUEUE": "819200", "LimitMSGQUEUESoft": "819200", "LimitNICE": "0", "LimitNICESoft": "0", "LimitNOFILE": "16384", "LimitNOFILESoft": "16384", "LimitNPROC": "2874", "LimitNPROCSoft": "2874", "LimitRSS": "infinity", "LimitRSSSoft": "infinity", "LimitRTPRIO": "0", "LimitRTPRIOSoft": "0", "LimitRTTIME": "infinity", "LimitRTTIMESoft": "infinity", "LimitSIGPENDING": "2874", "LimitSIGPENDINGSoft": "2874", "LimitSTACK": "infinity", "LimitSTACKSoft": "8388608", "LoadState": "loaded", "LockPersonality": "no", "LogLevelMax": "-1", "LogRateLimitBurst": "0", "LogRateLimitIntervalUSec": "0", "LogsDirectoryMode": "0755", "MainPID": "31240", "MemoryAccounting": "yes", "MemoryCurrent": "7737344", "MemoryDenyWriteExecute": "no", "MemoryHigh": "infinity", "MemoryLimit": "infinity", "MemoryLow": "0", "MemoryMax": "infinity", "MemoryMin": "0", "MemorySwapMax": "infinity", "MountAPIVFS": "no", "MountFlags": "", "NFileDescriptorStore": "0", "NRestarts": "0", "NUMAMask": "", "NUMAPolicy": "n/a", "Names": "smb.service", "NeedDaemonReload": "no", "Nice": "0", "NoNewPrivileges": "no", "NonBlocking": "no", "NotifyAccess": "main", "OOMScoreAdjust": "0", "OnFailureJobMode": "replace", "PIDFile": "/run/smbd.pid", "PermissionsStartOnly": "no", "Perpetual": "no", "PrivateDevices": "no", "PrivateMounts": "no", "PrivateNetwork": "no", "PrivateTmp": "no", "PrivateUsers": "no", "ProtectControlGroups": "no", "ProtectHome": "no", "ProtectKernelModules": "no", "ProtectKernelTunables": "no", "ProtectSystem": "no", "RefuseManualStart": "no", "RefuseManualStop": "no", "RemainAfterExit": "no", "RemoveIPC": "no", "Requires": "sysinit.target system.slice", "Restart": "no", "RestartUSec": "100ms", "RestrictNamespaces": "no", "RestrictRealtime": "no", "RestrictSUIDSGID": "no", "Result": "success", "RootDirectoryStartOnly": "no", "RuntimeDirectoryMode": "0755", "RuntimeDirectoryPreserve": "no", "RuntimeMaxUSec": "infinity", "SameProcessGroup": "no", "SecureBits": "0", "SendSIGHUP": "no", "SendSIGKILL": "yes", "Slice": "system.slice", "StandardError": "inherit", "StandardInput": "null", "StandardInputData": "", "StandardOutput": "journal", "StartLimitAction": "none", "StartLimitBurst": "5", "StartLimitIntervalUSec": "10s", "StartupBlockIOWeight": "[not set]", "StartupCPUShares": "[not set]", "StartupCPUWeight": "[not set]", "StartupIOWeight": "[not set]", "StateChangeTimestamp": "Sun 2024-06-02 09:12:42 EDT", "StateChangeTimestampMonotonic": "37028735068", "StateDirectoryMode": "0755", "StatusErrno": "0", "StatusText": "smbd: ready to serve connections...", "StopWhenUnneeded": "no", "SubState": "running", "SuccessAction": "none", "SyslogFacility": "3", "SyslogLevel": "6", "SyslogLevelPrefix": "yes", "SyslogPriority": "30", "SystemCallErrorNumber": "0", "TTYReset": "no", "TTYVHangup": "no", "TTYVTDisallocate": "no", "TasksAccounting": "yes", "TasksCurrent": "4", "TasksMax": "4599", "TimeoutStartUSec": "1min 30s", "TimeoutStopUSec": "1min 30s", "TimerSlackNSec": "50000", "Transient": "no", "Type": "notify", "UID": "[not set]", "UMask": "0022", "UnitFilePreset": "disabled", "UnitFileState": "enabled", "UtmpMode": "init", "WantedBy": "multi-user.target", "Wants": "network-online.target", "WatchdogTimestamp": "Sun 2024-06-02 09:12:42 EDT", "WatchdogTimestampMonotonic": "37028735065", "WatchdogUSec": "0"}}
+2024-06-02 09:21:52,371 p=10044 u=student n=ansible | TASK [display output] **********************************************************************************************************************************************************
+2024-06-02 09:21:52,433 p=10044 u=student n=ansible | ok: [servera.lab.example.com] => {
+    "output": {
+        "changed": false,
+        "enabled": true,
+        "failed": false,
+        "name": "smb",
+        "state": "started",
+        "status": {
+            "ActiveEnterTimestamp": "Sun 2024-06-02 09:12:42 EDT",
+            "ActiveEnterTimestampMonotonic": "37028735068",
+            "ActiveExitTimestampMonotonic": "0",
+            "ActiveState": "active",
+            "After": "sysinit.target system.slice winbind.service nmb.service systemd-journald.socket network.target network-online.target basic.target",
+            "AllowIsolate": "no",
+            "AllowedCPUs": "",
+            "AllowedMemoryNodes": "",
+            "AmbientCapabilities": "",
+            "AssertResult": "yes",
+            "AssertTimestamp": "Sun 2024-06-02 09:12:42 EDT",
+            "AssertTimestampMonotonic": "37028666676",
+            "Before": "multi-user.target shutdown.target",
+            "BlockIOAccounting": "no",
+            "BlockIOWeight": "[not set]",
+            "CPUAccounting": "no",
+            "CPUAffinity": "",
+            "CPUAffinityFromNUMA": "no",
+            "CPUQuotaPerSecUSec": "infinity",
+            "CPUQuotaPeriodUSec": "infinity",
+            "CPUSchedulingPolicy": "0",
+            "CPUSchedulingPriority": "0",
+            "CPUSchedulingResetOnFork": "no",
+            "CPUShares": "[not set]",
+            "CPUUsageNSec": "[not set]",
+            "CPUWeight": "[not set]",
+            "CacheDirectoryMode": "0755",
+            "CanFreeze": "yes",
+            "CanIsolate": "no",
+            "CanReload": "yes",
+            "CanStart": "yes",
+            "CanStop": "yes",
+            "CapabilityBoundingSet": "cap_chown cap_dac_override cap_dac_read_search cap_fowner cap_fsetid cap_kill cap_setgid cap_setuid cap_setpcap cap_linux_immutable cap_net_bind_service cap_net_broadcast cap_net_admin cap_net_raw cap_ipc_lock cap_ipc_owner cap_sys_module cap_sys_rawio cap_sys_chroot cap_sys_ptrace cap_sys_pacct cap_sys_admin cap_sys_boot cap_sys_nice cap_sys_resource cap_sys_time cap_sys_tty_config cap_mknod cap_lease cap_audit_write cap_audit_control cap_setfcap cap_mac_override cap_mac_admin cap_syslog cap_wake_alarm cap_block_suspend cap_audit_read cap_perfmon",
+            "CollectMode": "inactive",
+            "ConditionResult": "yes",
+            "ConditionTimestamp": "Sun 2024-06-02 09:12:42 EDT",
+            "ConditionTimestampMonotonic": "37028666676",
+            "ConfigurationDirectoryMode": "0755",
+            "Conflicts": "shutdown.target",
+            "ControlGroup": "/system.slice/smb.service",
+            "ControlPID": "0",
+            "DefaultDependencies": "yes",
+            "DefaultMemoryLow": "0",
+            "DefaultMemoryMin": "0",
+            "Delegate": "no",
+            "Description": "Samba SMB Daemon",
+            "DevicePolicy": "auto",
+            "Documentation": "man:smbd(8) man:samba(7) man:smb.conf(5)",
+            "DynamicUser": "no",
+            "EffectiveCPUs": "",
+            "EffectiveMemoryNodes": "",
+            "Environment": "KRB5CCNAME=FILE:/run/samba/krb5cc_samba",
+            "EnvironmentFiles": "/etc/sysconfig/samba (ignore_errors=yes)",
+            "ExecMainCode": "0",
+            "ExecMainExitTimestampMonotonic": "0",
+            "ExecMainPID": "31240",
+            "ExecMainStartTimestamp": "Sun 2024-06-02 09:12:42 EDT",
+            "ExecMainStartTimestampMonotonic": "37028667512",
+            "ExecMainStatus": "0",
+            "ExecReload": "{ path=/bin/kill ; argv[]=/bin/kill -HUP $MAINPID ; ignore_errors=no ; start_time=[n/a] ; stop_time=[n/a] ; pid=0 ; code=(null) ; status=0/0 }",
+            "ExecStart": "{ path=/usr/sbin/smbd ; argv[]=/usr/sbin/smbd --foreground --no-process-group $SMBDOPTIONS ; ignore_errors=no ; start_time=[Sun 2024-06-02 09:12:42 EDT] ; stop_time=[n/a] ; pid=31240 ; code=(null) ; status=0/0 }",
+            "FailureAction": "none",
+            "FileDescriptorStoreMax": "0",
+            "FragmentPath": "/usr/lib/systemd/system/smb.service",
+            "FreezerState": "running",
+            "GID": "[not set]",
+            "GuessMainPID": "yes",
+            "IOAccounting": "no",
+            "IOSchedulingClass": "0",
+            "IOSchedulingPriority": "0",
+            "IOWeight": "[not set]",
+            "IPAccounting": "no",
+            "IPEgressBytes": "18446744073709551615",
+            "IPEgressPackets": "18446744073709551615",
+            "IPIngressBytes": "18446744073709551615",
+            "IPIngressPackets": "18446744073709551615",
+            "Id": "smb.service",
+            "IgnoreOnIsolate": "no",
+            "IgnoreSIGPIPE": "yes",
+            "InactiveEnterTimestampMonotonic": "0",
+            "InactiveExitTimestamp": "Sun 2024-06-02 09:12:42 EDT",
+            "InactiveExitTimestampMonotonic": "37028667549",
+            "InvocationID": "d574896a6a0646e6b0aa6c60c7b185d9",
+            "JobRunningTimeoutUSec": "infinity",
+            "JobTimeoutAction": "none",
+            "JobTimeoutUSec": "infinity",
+            "KeyringMode": "private",
+            "KillMode": "control-group",
+            "KillSignal": "15",
+            "LimitAS": "infinity",
+            "LimitASSoft": "infinity",
+            "LimitCORE": "infinity",
+            "LimitCORESoft": "infinity",
+            "LimitCPU": "infinity",
+            "LimitCPUSoft": "infinity",
+            "LimitDATA": "infinity",
+            "LimitDATASoft": "infinity",
+            "LimitFSIZE": "infinity",
+            "LimitFSIZESoft": "infinity",
+            "LimitLOCKS": "infinity",
+            "LimitLOCKSSoft": "infinity",
+            "LimitMEMLOCK": "65536",
+            "LimitMEMLOCKSoft": "65536",
+            "LimitMSGQUEUE": "819200",
+            "LimitMSGQUEUESoft": "819200",
+            "LimitNICE": "0",
+            "LimitNICESoft": "0",
+            "LimitNOFILE": "16384",
+            "LimitNOFILESoft": "16384",
+            "LimitNPROC": "2874",
+            "LimitNPROCSoft": "2874",
+            "LimitRSS": "infinity",
+            "LimitRSSSoft": "infinity",
+            "LimitRTPRIO": "0",
+            "LimitRTPRIOSoft": "0",
+            "LimitRTTIME": "infinity",
+            "LimitRTTIMESoft": "infinity",
+            "LimitSIGPENDING": "2874",
+            "LimitSIGPENDINGSoft": "2874",
+            "LimitSTACK": "infinity",
+            "LimitSTACKSoft": "8388608",
+            "LoadState": "loaded",
+            "LockPersonality": "no",
+            "LogLevelMax": "-1",
+            "LogRateLimitBurst": "0",
+            "LogRateLimitIntervalUSec": "0",
+            "LogsDirectoryMode": "0755",
+            "MainPID": "31240",
+            "MemoryAccounting": "yes",
+            "MemoryCurrent": "7737344",
+            "MemoryDenyWriteExecute": "no",
+            "MemoryHigh": "infinity",
+            "MemoryLimit": "infinity",
+            "MemoryLow": "0",
+            "MemoryMax": "infinity",
+            "MemoryMin": "0",
+            "MemorySwapMax": "infinity",
+            "MountAPIVFS": "no",
+            "MountFlags": "",
+            "NFileDescriptorStore": "0",
+            "NRestarts": "0",
+            "NUMAMask": "",
+            "NUMAPolicy": "n/a",
+            "Names": "smb.service",
+            "NeedDaemonReload": "no",
+            "Nice": "0",
+            "NoNewPrivileges": "no",
+            "NonBlocking": "no",
+            "NotifyAccess": "main",
+            "OOMScoreAdjust": "0",
+            "OnFailureJobMode": "replace",
+            "PIDFile": "/run/smbd.pid",
+            "PermissionsStartOnly": "no",
+            "Perpetual": "no",
+            "PrivateDevices": "no",
+            "PrivateMounts": "no",
+            "PrivateNetwork": "no",
+            "PrivateTmp": "no",
+            "PrivateUsers": "no",
+            "ProtectControlGroups": "no",
+            "ProtectHome": "no",
+            "ProtectKernelModules": "no",
+            "ProtectKernelTunables": "no",
+            "ProtectSystem": "no",
+            "RefuseManualStart": "no",
+            "RefuseManualStop": "no",
+            "RemainAfterExit": "no",
+            "RemoveIPC": "no",
+            "Requires": "sysinit.target system.slice",
+            "Restart": "no",
+            "RestartUSec": "100ms",
+            "RestrictNamespaces": "no",
+            "RestrictRealtime": "no",
+            "RestrictSUIDSGID": "no",
+            "Result": "success",
+            "RootDirectoryStartOnly": "no",
+            "RuntimeDirectoryMode": "0755",
+            "RuntimeDirectoryPreserve": "no",
+            "RuntimeMaxUSec": "infinity",
+            "SameProcessGroup": "no",
+            "SecureBits": "0",
+            "SendSIGHUP": "no",
+            "SendSIGKILL": "yes",
+            "Slice": "system.slice",
+            "StandardError": "inherit",
+            "StandardInput": "null",
+            "StandardInputData": "",
+            "StandardOutput": "journal",
+            "StartLimitAction": "none",
+            "StartLimitBurst": "5",
+            "StartLimitIntervalUSec": "10s",
+            "StartupBlockIOWeight": "[not set]",
+            "StartupCPUShares": "[not set]",
+            "StartupCPUWeight": "[not set]",
+            "StartupIOWeight": "[not set]",
+            "StateChangeTimestamp": "Sun 2024-06-02 09:12:42 EDT",
+            "StateChangeTimestampMonotonic": "37028735068",
+            "StateDirectoryMode": "0755",
+            "StatusErrno": "0",
+            "StatusText": "smbd: ready to serve connections...",
+            "StopWhenUnneeded": "no",
+            "SubState": "running",
+            "SuccessAction": "none",
+            "SyslogFacility": "3",
+            "SyslogLevel": "6",
+            "SyslogLevelPrefix": "yes",
+            "SyslogPriority": "30",
+            "SystemCallErrorNumber": "0",
+            "TTYReset": "no",
+            "TTYVHangup": "no",
+            "TTYVTDisallocate": "no",
+            "TasksAccounting": "yes",
+            "TasksCurrent": "4",
+            "TasksMax": "4599",
+            "TimeoutStartUSec": "1min 30s",
+            "TimeoutStopUSec": "1min 30s",
+            "TimerSlackNSec": "50000",
+            "Transient": "no",
+            "Type": "notify",
+            "UID": "[not set]",
+            "UMask": "0022",
+            "UnitFilePreset": "disabled",
+            "UnitFileState": "enabled",
+            "UtmpMode": "init",
+            "WantedBy": "multi-user.target",
+            "Wants": "network-online.target",
+            "WatchdogTimestamp": "Sun 2024-06-02 09:12:42 EDT",
+            "WatchdogTimestampMonotonic": "37028735065",
+            "WatchdogUSec": "0"
+        }
+    }
+}
+2024-06-02 09:21:52,440 p=10044 u=student n=ansible | TASK [start firewalld] *********************************************************************************************************************************************************
+2024-06-02 09:21:52,971 p=10044 u=student n=ansible | ok: [servera.lab.example.com] => {"changed": false, "enabled": true, "name": "firewalld", "state": "started", "status": {"ActiveEnterTimestamp": "Sat 2024-06-01 22:55:44 EDT", "ActiveEnterTimestampMonotonic": "10679945", "ActiveExitTimestampMonotonic": "0", "ActiveState": "active", "After": "polkit.service basic.target system.slice dbus.service sysinit.target dbus.socket", "AllowIsolate": "no", "AllowedCPUs": "", "AllowedMemoryNodes": "", "AmbientCapabilities": "", "AssertResult": "yes", "AssertTimestamp": "Sat 2024-06-01 22:55:43 EDT", "AssertTimestampMonotonic": "9321021", "Before": "multi-user.target network-pre.target shutdown.target", "BlockIOAccounting": "no", "BlockIOWeight": "[not set]", "BusName": "org.fedoraproject.FirewallD1", "CPUAccounting": "no", "CPUAffinity": "", "CPUAffinityFromNUMA": "no", "CPUQuotaPerSecUSec": "infinity", "CPUQuotaPeriodUSec": "infinity", "CPUSchedulingPolicy": "0", "CPUSchedulingPriority": "0", "CPUSchedulingResetOnFork": "no", "CPUShares": "[not set]", "CPUUsageNSec": "[not set]", "CPUWeight": "[not set]", "CacheDirectoryMode": "0755", "CanFreeze": "yes", "CanIsolate": "no", "CanReload": "yes", "CanStart": "yes", "CanStop": "yes", "CapabilityBoundingSet": "cap_chown cap_dac_override cap_dac_read_search cap_fowner cap_fsetid cap_kill cap_setgid cap_setuid cap_setpcap cap_linux_immutable cap_net_bind_service cap_net_broadcast cap_net_admin cap_net_raw cap_ipc_lock cap_ipc_owner cap_sys_module cap_sys_rawio cap_sys_chroot cap_sys_ptrace cap_sys_pacct cap_sys_admin cap_sys_boot cap_sys_nice cap_sys_resource cap_sys_time cap_sys_tty_config cap_mknod cap_lease cap_audit_write cap_audit_control cap_setfcap cap_mac_override cap_mac_admin cap_syslog cap_wake_alarm cap_block_suspend cap_audit_read cap_perfmon", "CollectMode": "inactive", "ConditionResult": "yes", "ConditionTimestamp": "Sat 2024-06-01 22:55:43 EDT", "ConditionTimestampMonotonic": "9321020", "ConfigurationDirectoryMode": "0755", "Conflicts": "iptables.service ip6tables.service ipset.service nftables.service shutdown.target ebtables.service", "ControlGroup": "/system.slice/firewalld.service", "ControlPID": "0", "DefaultDependencies": "yes", "DefaultMemoryLow": "0", "DefaultMemoryMin": "0", "Delegate": "no", "Description": "firewalld - dynamic firewall daemon", "DevicePolicy": "auto", "Documentation": "man:firewalld(1)", "DynamicUser": "no", "EffectiveCPUs": "", "EffectiveMemoryNodes": "", "EnvironmentFiles": "/etc/sysconfig/firewalld (ignore_errors=yes)", "ExecMainCode": "0", "ExecMainExitTimestampMonotonic": "0", "ExecMainPID": "864", "ExecMainStartTimestamp": "Sat 2024-06-01 22:55:43 EDT", "ExecMainStartTimestampMonotonic": "9324768", "ExecMainStatus": "0", "ExecReload": "{ path=/bin/kill ; argv[]=/bin/kill -HUP $MAINPID ; ignore_errors=no ; start_time=[n/a] ; stop_time=[n/a] ; pid=0 ; code=(null) ; status=0/0 }", "ExecStart": "{ path=/usr/sbin/firewalld ; argv[]=/usr/sbin/firewalld --nofork --nopid $FIREWALLD_ARGS ; ignore_errors=no ; start_time=[n/a] ; stop_time=[n/a] ; pid=0 ; code=(null) ; status=0/0 }", "FailureAction": "none", "FileDescriptorStoreMax": "0", "FragmentPath": "/usr/lib/systemd/system/firewalld.service", "FreezerState": "running", "GID": "[not set]", "GuessMainPID": "yes", "IOAccounting": "no", "IOSchedulingClass": "0", "IOSchedulingPriority": "0", "IOWeight": "[not set]", "IPAccounting": "no", "IPEgressBytes": "18446744073709551615", "IPEgressPackets": "18446744073709551615", "IPIngressBytes": "18446744073709551615", "IPIngressPackets": "18446744073709551615", "Id": "firewalld.service", "IgnoreOnIsolate": "no", "IgnoreSIGPIPE": "yes", "InactiveEnterTimestampMonotonic": "0", "InactiveExitTimestamp": "Sat 2024-06-01 22:55:43 EDT", "InactiveExitTimestampMonotonic": "9324834", "InvocationID": "c147d7741fbe44fb8f88095544394457", "JobRunningTimeoutUSec": "infinity", "JobTimeoutAction": "none", "JobTimeoutUSec": "infinity", "KeyringMode": "private", "KillMode": "mixed", "KillSignal": "15", "LimitAS": "infinity", "LimitASSoft": "infinity", "LimitCORE": "infinity", "LimitCORESoft": "infinity", "LimitCPU": "infinity", "LimitCPUSoft": "infinity", "LimitDATA": "infinity", "LimitDATASoft": "infinity", "LimitFSIZE": "infinity", "LimitFSIZESoft": "infinity", "LimitLOCKS": "infinity", "LimitLOCKSSoft": "infinity", "LimitMEMLOCK": "65536", "LimitMEMLOCKSoft": "65536", "LimitMSGQUEUE": "819200", "LimitMSGQUEUESoft": "819200", "LimitNICE": "0", "LimitNICESoft": "0", "LimitNOFILE": "262144", "LimitNOFILESoft": "1024", "LimitNPROC": "2874", "LimitNPROCSoft": "2874", "LimitRSS": "infinity", "LimitRSSSoft": "infinity", "LimitRTPRIO": "0", "LimitRTPRIOSoft": "0", "LimitRTTIME": "infinity", "LimitRTTIMESoft": "infinity", "LimitSIGPENDING": "2874", "LimitSIGPENDINGSoft": "2874", "LimitSTACK": "infinity", "LimitSTACKSoft": "8388608", "LoadState": "loaded", "LockPersonality": "no", "LogLevelMax": "-1", "LogRateLimitBurst": "0", "LogRateLimitIntervalUSec": "0", "LogsDirectoryMode": "0755", "MainPID": "864", "MemoryAccounting": "yes", "MemoryCurrent": "33312768", "MemoryDenyWriteExecute": "no", "MemoryHigh": "infinity", "MemoryLimit": "infinity", "MemoryLow": "0", "MemoryMax": "infinity", "MemoryMin": "0", "MemorySwapMax": "infinity", "MountAPIVFS": "no", "MountFlags": "", "NFileDescriptorStore": "0", "NRestarts": "0", "NUMAMask": "", "NUMAPolicy": "n/a", "Names": "firewalld.service", "NeedDaemonReload": "no", "Nice": "0", "NoNewPrivileges": "no", "NonBlocking": "no", "NotifyAccess": "none", "OOMScoreAdjust": "0", "OnFailureJobMode": "replace", "PermissionsStartOnly": "no", "Perpetual": "no", "PrivateDevices": "no", "PrivateMounts": "no", "PrivateNetwork": "no", "PrivateTmp": "no", "PrivateUsers": "no", "ProtectControlGroups": "no", "ProtectHome": "no", "ProtectKernelModules": "no", "ProtectKernelTunables": "no", "ProtectSystem": "no", "RefuseManualStart": "no", "RefuseManualStop": "no", "RemainAfterExit": "no", "RemoveIPC": "no", "Requires": "sysinit.target system.slice dbus.socket", "Restart": "no", "RestartUSec": "100ms", "RestrictNamespaces": "no", "RestrictRealtime": "no", "RestrictSUIDSGID": "no", "Result": "success", "RootDirectoryStartOnly": "no", "RuntimeDirectoryMode": "0755", "RuntimeDirectoryPreserve": "no", "RuntimeMaxUSec": "infinity", "SameProcessGroup": "no", "SecureBits": "0", "SendSIGHUP": "no", "SendSIGKILL": "yes", "Slice": "system.slice", "StandardError": "null", "StandardInput": "null", "StandardInputData": "", "StandardOutput": "null", "StartLimitAction": "none", "StartLimitBurst": "5", "StartLimitIntervalUSec": "10s", "StartupBlockIOWeight": "[not set]", "StartupCPUShares": "[not set]", "StartupCPUWeight": "[not set]", "StartupIOWeight": "[not set]", "StateChangeTimestamp": "Sat 2024-06-01 22:55:44 EDT", "StateChangeTimestampMonotonic": "10679945", "StateDirectoryMode": "0755", "StatusErrno": "0", "StopWhenUnneeded": "no", "SubState": "running", "SuccessAction": "none", "SyslogFacility": "3", "SyslogLevel": "6", "SyslogLevelPrefix": "yes", "SyslogPriority": "30", "SystemCallErrorNumber": "0", "TTYReset": "no", "TTYVHangup": "no", "TTYVTDisallocate": "no", "TasksAccounting": "yes", "TasksCurrent": "2", "TasksMax": "4599", "TimeoutStartUSec": "1min 30s", "TimeoutStopUSec": "1min 30s", "TimerSlackNSec": "50000", "Transient": "no", "Type": "dbus", "UID": "[not set]", "UMask": "0022", "UnitFilePreset": "enabled", "UnitFileState": "enabled", "UtmpMode": "init", "WantedBy": "multi-user.target", "Wants": "network-pre.target", "WatchdogTimestamp": "Sat 2024-06-01 22:55:44 EDT", "WatchdogTimestampMonotonic": "10679943", "WatchdogUSec": "0"}}
+2024-06-02 09:21:52,978 p=10044 u=student n=ansible | TASK [configure firewall for samba] ********************************************************************************************************************************************
+2024-06-02 09:21:53,645 p=10044 u=student n=ansible | ok: [servera.lab.example.com] => {"changed": false, "msg": "Permanent and Non-Permanent(immediate) operation"}
+2024-06-02 09:21:53,652 p=10044 u=student n=ansible | TASK [deliver samba config] ****************************************************************************************************************************************************
+2024-06-02 09:21:54,552 p=10044 u=student n=ansible | ok: [servera.lab.example.com] => {"changed": false, "checksum": "e5c193ef622bac5e1f767b0da6c8c73bd109b1fa", "dest": "/etc/samba/smb.conf", "gid": 0, "group": "root", "mode": "0644", "owner": "root", "path": "/etc/samba/smb.conf", "secontext": "system_u:object_r:samba_etc_t:s0", "size": 520, "state": "file", "uid": 0}
+2024-06-02 09:21:54,553 p=10044 u=student n=ansible | META: ran handlers
+2024-06-02 09:21:54,553 p=10044 u=student n=ansible | META: ran handlers
+2024-06-02 09:21:54,554 p=10044 u=student n=ansible | PLAY RECAP *********************************************************************************************************************************************************************
+2024-06-02 09:21:54,554 p=10044 u=student n=ansible | servera.lab.example.com    : ok=9    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-06-02 09:26:07,542 p=10232 u=student n=ansible | PLAY [Install a samba server] **************************************************************************************************************************************************
+2024-06-02 09:26:07,551 p=10232 u=student n=ansible | TASK [Gathering Facts] *********************************************************************************************************************************************************
+2024-06-02 09:26:08,871 p=10232 u=student n=ansible | ok: [servera.lab.example.com]
+2024-06-02 09:26:08,879 p=10232 u=student n=ansible | TASK [install samba] ***********************************************************************************************************************************************************
+2024-06-02 09:26:10,563 p=10232 u=student n=ansible | ok: [servera.lab.example.com]
+2024-06-02 09:26:10,570 p=10232 u=student n=ansible | TASK [install firewalld] *******************************************************************************************************************************************************
+2024-06-02 09:26:12,089 p=10232 u=student n=ansible | ok: [servera.lab.example.com]
+2024-06-02 09:26:12,096 p=10232 u=student n=ansible | TASK [debug install_state variable] ********************************************************************************************************************************************
+2024-06-02 09:26:12,136 p=10232 u=student n=ansible | ok: [servera.lab.example.com] => {
+    "msg": "The state for the samba service is installed"
+}
+2024-06-02 09:26:12,144 p=10232 u=student n=ansible | TASK [start samba] *************************************************************************************************************************************************************
+2024-06-02 09:26:12,874 p=10232 u=student n=ansible | ok: [servera.lab.example.com]
+2024-06-02 09:26:12,881 p=10232 u=student n=ansible | TASK [display output] **********************************************************************************************************************************************************
+2024-06-02 09:26:12,894 p=10232 u=student n=ansible | skipping: [servera.lab.example.com]
+2024-06-02 09:26:12,901 p=10232 u=student n=ansible | TASK [start firewalld] *********************************************************************************************************************************************************
+2024-06-02 09:26:13,425 p=10232 u=student n=ansible | ok: [servera.lab.example.com]
+2024-06-02 09:26:13,432 p=10232 u=student n=ansible | TASK [configure firewall for samba] ********************************************************************************************************************************************
+2024-06-02 09:26:14,067 p=10232 u=student n=ansible | ok: [servera.lab.example.com]
+2024-06-02 09:26:14,074 p=10232 u=student n=ansible | TASK [deliver samba config] ****************************************************************************************************************************************************
+2024-06-02 09:26:14,951 p=10232 u=student n=ansible | ok: [servera.lab.example.com]
+2024-06-02 09:26:14,953 p=10232 u=student n=ansible | PLAY RECAP *********************************************************************************************************************************************************************
+2024-06-02 09:26:14,953 p=10232 u=student n=ansible | servera.lab.example.com    : ok=8    changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+2024-06-02 09:31:08,582 p=10394 u=student n=ansible | PLAY [test debugs module] ******************************************************************************************************************************************************
+2024-06-02 09:31:08,591 p=10394 u=student n=ansible | TASK [Gathering Facts] *********************************************************************************************************************************************************
+2024-06-02 09:31:09,865 p=10394 u=student n=ansible | ok: [servera.lab.example.com]
+2024-06-02 09:31:09,875 p=10394 u=student n=ansible | TASK [shell] *******************************************************************************************************************************************************************
+2024-06-02 09:31:10,337 p=10394 u=student n=ansible | changed: [servera.lab.example.com]
+2024-06-02 09:31:10,345 p=10394 u=student n=ansible | TASK [debug] *******************************************************************************************************************************************************************
+2024-06-02 09:31:10,359 p=10394 u=student n=ansible | skipping: [servera.lab.example.com]
+2024-06-02 09:31:10,362 p=10394 u=student n=ansible | PLAY RECAP *********************************************************************************************************************************************************************
+2024-06-02 09:31:10,363 p=10394 u=student n=ansible | servera.lab.example.com    : ok=2    changed=1    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+2024-06-02 09:45:25,820 p=10657 u=student n=ansible | ansible-playbook 2.9.21
+  config file = /home/student/troubleshoot-playbook/ansible.cfg
+  configured module search path = ['/home/student/.ansible/plugins/modules', '/usr/share/ansible/plugins/modules']
+  ansible python module location = /usr/lib/python3.6/site-packages/ansible
+  executable location = /usr/bin/ansible-playbook
+  python version = 3.6.8 (default, Mar 18 2021, 08:58:41) [GCC 8.4.1 20200928 (Red Hat 8.4.1-1)]
+2024-06-02 09:45:25,820 p=10657 u=student n=ansible | Using /home/student/troubleshoot-playbook/ansible.cfg as config file
+2024-06-02 09:45:26,040 p=10657 u=student n=ansible | Skipping callback 'actionable', as we already have a stdout callback.
+2024-06-02 09:45:26,040 p=10657 u=student n=ansible | Skipping callback 'counter_enabled', as we already have a stdout callback.
+2024-06-02 09:45:26,040 p=10657 u=student n=ansible | Skipping callback 'debug', as we already have a stdout callback.
+2024-06-02 09:45:26,040 p=10657 u=student n=ansible | Skipping callback 'dense', as we already have a stdout callback.
+2024-06-02 09:45:26,040 p=10657 u=student n=ansible | Skipping callback 'dense', as we already have a stdout callback.
+2024-06-02 09:45:26,040 p=10657 u=student n=ansible | Skipping callback 'full_skip', as we already have a stdout callback.
+2024-06-02 09:45:26,040 p=10657 u=student n=ansible | Skipping callback 'json', as we already have a stdout callback.
+2024-06-02 09:45:26,040 p=10657 u=student n=ansible | Skipping callback 'minimal', as we already have a stdout callback.
+2024-06-02 09:45:26,040 p=10657 u=student n=ansible | Skipping callback 'null', as we already have a stdout callback.
+2024-06-02 09:45:26,040 p=10657 u=student n=ansible | Skipping callback 'oneline', as we already have a stdout callback.
+2024-06-02 09:45:26,041 p=10657 u=student n=ansible | Skipping callback 'selective', as we already have a stdout callback.
+2024-06-02 09:45:26,041 p=10657 u=student n=ansible | Skipping callback 'skippy', as we already have a stdout callback.
+2024-06-02 09:45:26,041 p=10657 u=student n=ansible | Skipping callback 'stderr', as we already have a stdout callback.
+2024-06-02 09:45:26,041 p=10657 u=student n=ansible | Skipping callback 'unixy', as we already have a stdout callback.
+2024-06-02 09:45:26,041 p=10657 u=student n=ansible | Skipping callback 'yaml', as we already have a stdout callback.
+2024-06-02 09:45:26,041 p=10657 u=student n=ansible | PLAYBOOK: test_debug.yml *******************************************************************************************************************************************************
+2024-06-02 09:45:26,041 p=10657 u=student n=ansible | 1 plays in test_debug.yml
+2024-06-02 09:45:26,043 p=10657 u=student n=ansible | PLAY [test debugs module] ******************************************************************************************************************************************************
+2024-06-02 09:45:26,051 p=10657 u=student n=ansible | TASK [Gathering Facts] *********************************************************************************************************************************************************
+2024-06-02 09:45:27,321 p=10657 u=student n=ansible | ok: [servera.lab.example.com]
+2024-06-02 09:45:27,323 p=10657 u=student n=ansible | META: ran handlers
+2024-06-02 09:45:27,330 p=10657 u=student n=ansible | TASK [shell] *******************************************************************************************************************************************************************
+2024-06-02 09:45:27,770 p=10657 u=student n=ansible | changed: [servera.lab.example.com] => {"changed": true, "cmd": "/usr/bin/uptime", "delta": "0:00:00.005258", "end": "2024-06-02 09:45:27.725720", "rc": 0, "start": "2024-06-02 09:45:27.720462", "stderr": "", "stderr_lines": [], "stdout": " 09:45:27 up 10:49,  1 user,  load average: 0.08, 0.02, 0.01", "stdout_lines": [" 09:45:27 up 10:49,  1 user,  load average: 0.08, 0.02, 0.01"]}
+2024-06-02 09:45:27,777 p=10657 u=student n=ansible | TASK [debug] *******************************************************************************************************************************************************************
+2024-06-02 09:45:27,826 p=10657 u=student n=ansible | ok: [servera.lab.example.com] => {
+    "result": {
+        "changed": true,
+        "cmd": "/usr/bin/uptime",
+        "delta": "0:00:00.005258",
+        "end": "2024-06-02 09:45:27.725720",
+        "failed": false,
+        "rc": 0,
+        "start": "2024-06-02 09:45:27.720462",
+        "stderr": "",
+        "stderr_lines": [],
+        "stdout": " 09:45:27 up 10:49,  1 user,  load average: 0.08, 0.02, 0.01",
+        "stdout_lines": [
+            " 09:45:27 up 10:49,  1 user,  load average: 0.08, 0.02, 0.01"
+        ]
+    }
+}
+2024-06-02 09:45:27,827 p=10657 u=student n=ansible | META: ran handlers
+2024-06-02 09:45:27,827 p=10657 u=student n=ansible | META: ran handlers
+2024-06-02 09:45:27,828 p=10657 u=student n=ansible | PLAY RECAP *********************************************************************************************************************************************************************
+2024-06-02 09:45:27,828 p=10657 u=student n=ansible | servera.lab.example.com    : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-06-02 09:46:26,864 p=10726 u=student n=ansible | ansible-playbook 2.9.21
+  config file = /home/student/troubleshoot-playbook/ansible.cfg
+  configured module search path = ['/home/student/.ansible/plugins/modules', '/usr/share/ansible/plugins/modules']
+  ansible python module location = /usr/lib/python3.6/site-packages/ansible
+  executable location = /usr/bin/ansible-playbook
+  python version = 3.6.8 (default, Mar 18 2021, 08:58:41) [GCC 8.4.1 20200928 (Red Hat 8.4.1-1)]
+2024-06-02 09:46:26,864 p=10726 u=student n=ansible | Using /home/student/troubleshoot-playbook/ansible.cfg as config file
+2024-06-02 09:46:27,082 p=10726 u=student n=ansible | Skipping callback 'actionable', as we already have a stdout callback.
+2024-06-02 09:46:27,082 p=10726 u=student n=ansible | Skipping callback 'counter_enabled', as we already have a stdout callback.
+2024-06-02 09:46:27,083 p=10726 u=student n=ansible | Skipping callback 'debug', as we already have a stdout callback.
+2024-06-02 09:46:27,083 p=10726 u=student n=ansible | Skipping callback 'dense', as we already have a stdout callback.
+2024-06-02 09:46:27,083 p=10726 u=student n=ansible | Skipping callback 'dense', as we already have a stdout callback.
+2024-06-02 09:46:27,083 p=10726 u=student n=ansible | Skipping callback 'full_skip', as we already have a stdout callback.
+2024-06-02 09:46:27,083 p=10726 u=student n=ansible | Skipping callback 'json', as we already have a stdout callback.
+2024-06-02 09:46:27,083 p=10726 u=student n=ansible | Skipping callback 'minimal', as we already have a stdout callback.
+2024-06-02 09:46:27,083 p=10726 u=student n=ansible | Skipping callback 'null', as we already have a stdout callback.
+2024-06-02 09:46:27,083 p=10726 u=student n=ansible | Skipping callback 'oneline', as we already have a stdout callback.
+2024-06-02 09:46:27,083 p=10726 u=student n=ansible | Skipping callback 'selective', as we already have a stdout callback.
+2024-06-02 09:46:27,083 p=10726 u=student n=ansible | Skipping callback 'skippy', as we already have a stdout callback.
+2024-06-02 09:46:27,083 p=10726 u=student n=ansible | Skipping callback 'stderr', as we already have a stdout callback.
+2024-06-02 09:46:27,083 p=10726 u=student n=ansible | Skipping callback 'unixy', as we already have a stdout callback.
+2024-06-02 09:46:27,083 p=10726 u=student n=ansible | Skipping callback 'yaml', as we already have a stdout callback.
+2024-06-02 09:46:27,083 p=10726 u=student n=ansible | PLAYBOOK: test_debug.yml *******************************************************************************************************************************************************
+2024-06-02 09:46:27,083 p=10726 u=student n=ansible | 1 plays in test_debug.yml
+2024-06-02 09:46:27,086 p=10726 u=student n=ansible | PLAY [test debugs module] ******************************************************************************************************************************************************
+2024-06-02 09:46:27,094 p=10726 u=student n=ansible | TASK [Gathering Facts] *********************************************************************************************************************************************************
+2024-06-02 09:46:28,380 p=10726 u=student n=ansible | ok: [servera.lab.example.com]
+2024-06-02 09:46:28,382 p=10726 u=student n=ansible | META: ran handlers
+2024-06-02 09:46:28,388 p=10726 u=student n=ansible | TASK [shell] *******************************************************************************************************************************************************************
+2024-06-02 09:46:28,793 p=10726 u=student n=ansible | changed: [servera.lab.example.com] => {"changed": true, "cmd": "/usr/bin/uptime", "delta": "0:00:00.005224", "end": "2024-06-02 09:46:28.776099", "rc": 0, "start": "2024-06-02 09:46:28.770875", "stderr": "", "stderr_lines": [], "stdout": " 09:46:28 up 10:50,  1 user,  load average: 0.03, 0.01, 0.00", "stdout_lines": [" 09:46:28 up 10:50,  1 user,  load average: 0.03, 0.01, 0.00"]}
+2024-06-02 09:46:28,801 p=10726 u=student n=ansible | TASK [debug] *******************************************************************************************************************************************************************
+2024-06-02 09:46:28,837 p=10726 u=student n=ansible | ok: [servera.lab.example.com] => {
+    "result": {
+        "changed": true,
+        "cmd": "/usr/bin/uptime",
+        "delta": "0:00:00.005224",
+        "end": "2024-06-02 09:46:28.776099",
+        "failed": false,
+        "rc": 0,
+        "start": "2024-06-02 09:46:28.770875",
+        "stderr": "",
+        "stderr_lines": [],
+        "stdout": " 09:46:28 up 10:50,  1 user,  load average: 0.03, 0.01, 0.00",
+        "stdout_lines": [
+            " 09:46:28 up 10:50,  1 user,  load average: 0.03, 0.01, 0.00"
+        ]
+    }
+}
+2024-06-02 09:46:28,838 p=10726 u=student n=ansible | META: ran handlers
+2024-06-02 09:46:28,838 p=10726 u=student n=ansible | META: ran handlers
+2024-06-02 09:46:28,840 p=10726 u=student n=ansible | PLAY RECAP *********************************************************************************************************************************************************************
+2024-06-02 09:46:28,840 p=10726 u=student n=ansible | servera.lab.example.com    : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-06-02 09:47:11,975 p=10794 u=student n=ansible | PLAY [Install a samba server] **************************************************************************************************************************************************
+2024-06-02 09:47:11,984 p=10794 u=student n=ansible | TASK [Gathering Facts] *********************************************************************************************************************************************************
+2024-06-02 09:47:13,233 p=10794 u=student n=ansible | ok: [servera.lab.example.com]
+2024-06-02 09:47:13,241 p=10794 u=student n=ansible | TASK [install samba] ***********************************************************************************************************************************************************
+2024-06-02 09:47:14,835 p=10794 u=student n=ansible | ok: [servera.lab.example.com]
+2024-06-02 09:47:14,841 p=10794 u=student n=ansible | TASK [install firewalld] *******************************************************************************************************************************************************
+2024-06-02 09:47:16,358 p=10794 u=student n=ansible | ok: [servera.lab.example.com]
+2024-06-02 09:47:16,365 p=10794 u=student n=ansible | TASK [debug install_state variable] ********************************************************************************************************************************************
+2024-06-02 09:47:16,399 p=10794 u=student n=ansible | ok: [servera.lab.example.com] => {
+    "msg": "The state for the samba service is installed"
+}
+2024-06-02 09:47:16,407 p=10794 u=student n=ansible | TASK [start samba] *************************************************************************************************************************************************************
+2024-06-02 09:47:17,131 p=10794 u=student n=ansible | ok: [servera.lab.example.com]
+2024-06-02 09:47:17,138 p=10794 u=student n=ansible | TASK [display output] **********************************************************************************************************************************************************
+2024-06-02 09:47:17,152 p=10794 u=student n=ansible | skipping: [servera.lab.example.com]
+2024-06-02 09:47:17,159 p=10794 u=student n=ansible | TASK [start firewalld] *********************************************************************************************************************************************************
+2024-06-02 09:47:17,660 p=10794 u=student n=ansible | ok: [servera.lab.example.com]
+2024-06-02 09:47:17,667 p=10794 u=student n=ansible | TASK [configure firewall for samba] ********************************************************************************************************************************************
+2024-06-02 09:47:18,304 p=10794 u=student n=ansible | ok: [servera.lab.example.com]
+2024-06-02 09:47:18,312 p=10794 u=student n=ansible | TASK [deliver samba config] ****************************************************************************************************************************************************
+2024-06-02 09:47:19,158 p=10794 u=student n=ansible | ok: [servera.lab.example.com]
+2024-06-02 09:47:19,160 p=10794 u=student n=ansible | PLAY RECAP *********************************************************************************************************************************************************************
+2024-06-02 09:47:19,160 p=10794 u=student n=ansible | servera.lab.example.com    : ok=8    changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+2024-06-02 22:55:44,732 p=18198 u=student n=ansible | playbook: user_create.yml
+2024-06-02 22:57:19,423 p=18280 u=student n=ansible | PLAY [test create users] *******************************************************************************************************************************************************
+2024-06-02 22:57:19,431 p=18280 u=student n=ansible | TASK [Gathering Facts] *********************************************************************************************************************************************************
+2024-06-02 22:57:20,681 p=18280 u=student n=ansible | ok: [servera.lab.example.com]
+2024-06-02 22:57:20,708 p=18280 u=student n=ansible | TASK [create ['user01', 'user02']] *********************************************************************************************************************************************
+2024-06-02 22:57:21,276 p=18280 u=student n=ansible | [WARNING]: The value ['user01', 'user02'] (type list) in a string field was converted to "['user01', 'user02']" (type string). If this does not look like what you expect,
+quote the entire value to ensure it does not change.
+
+2024-06-02 22:57:21,277 p=18280 u=student n=ansible | fatal: [servera.lab.example.com]: FAILED! => {"changed": false, "msg": "useradd: invalid user name '['user01', 'user02']'\n", "name": "['user01', 'user02']", "rc": 3}
+2024-06-02 22:57:21,278 p=18280 u=student n=ansible | PLAY RECAP *********************************************************************************************************************************************************************
+2024-06-02 22:57:21,279 p=18280 u=student n=ansible | servera.lab.example.com    : ok=1    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2024-06-02 22:58:32,477 p=18347 u=student n=ansible | PLAY [test create users] *******************************************************************************************************************************************************
+2024-06-02 22:58:32,485 p=18347 u=student n=ansible | TASK [Gathering Facts] *********************************************************************************************************************************************************
+2024-06-02 22:58:33,718 p=18347 u=student n=ansible | ok: [servera.lab.example.com]
+2024-06-02 22:58:33,745 p=18347 u=student n=ansible | TASK [create ['user01', 'user02']] *********************************************************************************************************************************************
+2024-06-02 22:58:33,770 p=18347 u=student n=ansible | fatal: [servera.lab.example.com]: FAILED! => {"msg": "The task includes an option with an undefined variable. The error was: 'str object' has no attribute 'users'\n\nThe error appears to be in '/home/student/troubleshoot-playbook/user_create.yml': line 10, column 7, but may\nbe elsewhere in the file depending on the exact syntax problem.\n\nThe offending line appears to be:\n\n  tasks:\n    - name: create {{ users }}\n      ^ here\nWe could be wrong, but this one looks like it might be an issue with\nmissing quotes. Always quote template expression brackets when they\nstart a value. For instance:\n\n    with_items:\n      - {{ foo }}\n\nShould be written as:\n\n    with_items:\n      - \"{{ foo }}\"\n"}
+2024-06-02 22:58:33,772 p=18347 u=student n=ansible | PLAY RECAP *********************************************************************************************************************************************************************
+2024-06-02 22:58:33,772 p=18347 u=student n=ansible | servera.lab.example.com    : ok=1    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2024-06-02 22:58:58,528 p=18392 u=student n=ansible | ERROR! We were unable to read either as JSON nor YAML, these are the errors we got from each:
+JSON: Expecting value: line 1 column 1 (char 0)
+
+Syntax Error while loading YAML.
+  found unacceptable key (unhashable type: 'AnsibleMapping')
+
+The error appears to be in '/home/student/troubleshoot-playbook/user_create.yml': line 14, column 14, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+        state: present
+      loop: {{ users }}
+             ^ here
+We could be wrong, but this one looks like it might be an issue with
+missing quotes. Always quote template expression brackets when they
+start a value. For instance:
+
+    with_items:
+      - {{ foo }}
+
+Should be written as:
+
+    with_items:
+      - "{{ foo }}"
+
+2024-06-02 22:59:07,421 p=18403 u=student n=ansible | ERROR! We were unable to read either as JSON nor YAML, these are the errors we got from each:
+JSON: Expecting value: line 1 column 1 (char 0)
+
+Syntax Error while loading YAML.
+  found unacceptable key (unhashable type: 'AnsibleMapping')
+
+The error appears to be in '/home/student/troubleshoot-playbook/user_create.yml': line 14, column 14, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+        state: present
+      loop: {{ users }}
+             ^ here
+We could be wrong, but this one looks like it might be an issue with
+missing quotes. Always quote template expression brackets when they
+start a value. For instance:
+
+    with_items:
+      - {{ foo }}
+
+Should be written as:
+
+    with_items:
+      - "{{ foo }}"
+
+2024-06-02 22:59:27,425 p=18422 u=student n=ansible | PLAY [test create users] *******************************************************************************************************************************************************
+2024-06-02 22:59:27,435 p=18422 u=student n=ansible | TASK [Gathering Facts] *********************************************************************************************************************************************************
+2024-06-02 22:59:28,413 p=18422 u=student n=ansible | ok: [servera.lab.example.com]
+2024-06-02 22:59:28,436 p=18422 u=student n=ansible | TASK [create user01 user02] ****************************************************************************************************************************************************
+2024-06-02 22:59:28,450 p=18422 u=student n=ansible | fatal: [servera.lab.example.com]: FAILED! => {"msg": "Invalid data passed to 'loop', it requires a list, got this instead: user01 user02. Hint: If you passed a list/dict of just one element, try adding wantlist=True to your lookup invocation or use q/query instead of lookup."}
+2024-06-02 22:59:28,451 p=18422 u=student n=ansible | PLAY RECAP *********************************************************************************************************************************************************************
+2024-06-02 22:59:28,452 p=18422 u=student n=ansible | servera.lab.example.com    : ok=1    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2024-06-02 23:00:08,586 p=18462 u=student n=ansible | PLAY [test create users] *******************************************************************************************************************************************************
+2024-06-02 23:00:08,594 p=18462 u=student n=ansible | TASK [Gathering Facts] *********************************************************************************************************************************************************
+2024-06-02 23:00:09,556 p=18462 u=student n=ansible | ok: [servera.lab.example.com]
+2024-06-02 23:00:09,584 p=18462 u=student n=ansible | TASK [create ['user01', 'user02']] *********************************************************************************************************************************************
+2024-06-02 23:00:09,604 p=18462 u=student n=ansible | fatal: [servera.lab.example.com]: FAILED! => {"msg": "The task includes an option with an undefined variable. The error was: 'str object' has no attribute 'users'\n\nThe error appears to be in '/home/student/troubleshoot-playbook/user_create.yml': line 10, column 7, but may\nbe elsewhere in the file depending on the exact syntax problem.\n\nThe offending line appears to be:\n\n  tasks:\n    - name: create {{ users }}\n      ^ here\nWe could be wrong, but this one looks like it might be an issue with\nmissing quotes. Always quote template expression brackets when they\nstart a value. For instance:\n\n    with_items:\n      - {{ foo }}\n\nShould be written as:\n\n    with_items:\n      - \"{{ foo }}\"\n"}
+2024-06-02 23:00:09,605 p=18462 u=student n=ansible | PLAY RECAP *********************************************************************************************************************************************************************
+2024-06-02 23:00:09,605 p=18462 u=student n=ansible | servera.lab.example.com    : ok=1    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2024-06-02 23:00:34,931 p=18495 u=student n=ansible | PLAY [test create users] *******************************************************************************************************************************************************
+2024-06-02 23:00:34,939 p=18495 u=student n=ansible | TASK [Gathering Facts] *********************************************************************************************************************************************************
+2024-06-02 23:00:35,938 p=18495 u=student n=ansible | ok: [servera.lab.example.com]
+2024-06-02 23:00:35,966 p=18495 u=student n=ansible | TASK [create user02] ***********************************************************************************************************************************************************
+2024-06-02 23:00:35,981 p=18495 u=student n=ansible | fatal: [servera.lab.example.com]: FAILED! => {"msg": "Invalid data passed to 'loop', it requires a list, got this instead: user02. Hint: If you passed a list/dict of just one element, try adding wantlist=True to your lookup invocation or use q/query instead of lookup."}
+2024-06-02 23:00:35,982 p=18495 u=student n=ansible | PLAY RECAP *********************************************************************************************************************************************************************
+2024-06-02 23:00:35,983 p=18495 u=student n=ansible | servera.lab.example.com    : ok=1    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2024-06-02 23:01:08,168 p=18547 u=student n=ansible | PLAY [test create users] *******************************************************************************************************************************************************
+2024-06-02 23:01:08,177 p=18547 u=student n=ansible | TASK [Gathering Facts] *********************************************************************************************************************************************************
+2024-06-02 23:01:09,177 p=18547 u=student n=ansible | ok: [servera.lab.example.com]
+2024-06-02 23:01:09,185 p=18547 u=student n=ansible | TASK [create new user] *********************************************************************************************************************************************************
+2024-06-02 23:01:09,666 p=18547 u=student n=ansible | fatal: [servera.lab.example.com]: FAILED! => {"changed": false, "msg": "useradd: Permission denied.\nuseradd: cannot lock /etc/passwd; try again later.\n", "name": "user10", "rc": 1}
+2024-06-02 23:01:09,667 p=18547 u=student n=ansible | PLAY RECAP *********************************************************************************************************************************************************************
+2024-06-02 23:01:09,668 p=18547 u=student n=ansible | servera.lab.example.com    : ok=1    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2024-06-02 23:01:18,906 p=18578 u=student n=ansible | PLAY [test create users] *******************************************************************************************************************************************************
+2024-06-02 23:01:18,915 p=18578 u=student n=ansible | TASK [Gathering Facts] *********************************************************************************************************************************************************
+2024-06-02 23:01:19,969 p=18578 u=student n=ansible | ok: [servera.lab.example.com]
+2024-06-02 23:01:19,977 p=18578 u=student n=ansible | TASK [create new user] *********************************************************************************************************************************************************
+2024-06-02 23:01:23,093 p=18578 u=student n=ansible | changed: [servera.lab.example.com]
+2024-06-02 23:01:23,095 p=18578 u=student n=ansible | PLAY RECAP *********************************************************************************************************************************************************************
+2024-06-02 23:01:23,095 p=18578 u=student n=ansible | servera.lab.example.com    : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   

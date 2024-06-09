@@ -1,0 +1,10 @@
+---
+- name: test debugs module
+  hosts: servera.lab.example.com
+  tasks:
+  - shell: /usr/bin/uptime
+    register: result
+
+  - debug:
+      var: result
+      verbosity: 2

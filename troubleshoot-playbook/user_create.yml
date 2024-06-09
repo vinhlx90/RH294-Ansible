@@ -1,0 +1,11 @@
+---
+- name: test create users
+  hosts: servera.lab.example.com
+  remote_user: devops
+  tasks:
+    - name: create new user
+      user:
+        name: user10
+        state: present
+
+

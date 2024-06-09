@@ -1,0 +1,199 @@
+2024-06-07 12:02:28,695 p=4660 u=student n=ansible | servera.lab.example.com | CHANGED | rc=0 >>
+# Do not change this content, this be managed by Ansible
+#
+# Global Postfix configuration file. This file lists only a subset
+# of all parameters. For the syntax, and for a complete parameter
+# list, see the postconf(5) manual page (command: "man 5 postconf").
+#
+# For common configuration examples, see BASIC_CONFIGURATION_README
+# and STANDARD_CONFIGURATION_README. To find these documents, use
+# the command "postconf html_directory readme_directory", or go to
+# http://www.postfix.org/BASIC_CONFIGURATION_README.html etc.
+
+2024-06-07 12:02:43,052 p=4698 u=student n=ansible | servera.lab.example.com | CHANGED | rc=0 >>
+# Do not change this content, this be managed by Ansible
+#
+# Global Postfix configuration file. This file lists only a subset
+# of all parameters. For the syntax, and for a complete parameter
+# list, see the postconf(5) manual page (command: "man 5 postconf").
+#
+# For common configuration examples, see BASIC_CONFIGURATION_README
+# and STANDARD_CONFIGURATION_README. To find these documents, use
+# the command "postconf html_directory readme_directory", or go to
+# http://www.postfix.org/BASIC_CONFIGURATION_README.html etc.
+
+2024-06-07 12:03:29,043 p=4747 u=student n=ansible | PLAY [create mail relay servers] **********************************************************************************************************************************************************************************
+2024-06-07 12:03:29,052 p=4747 u=student n=ansible | TASK [Gathering Facts] ********************************************************************************************************************************************************************************************
+2024-06-07 12:03:30,173 p=4747 u=student n=ansible | ok: [servera.lab.example.com]
+2024-06-07 12:03:30,181 p=4747 u=student n=ansible | TASK [install postfix package] ************************************************************************************************************************************************************************************
+2024-06-07 12:03:31,897 p=4747 u=student n=ansible | ok: [servera.lab.example.com]
+2024-06-07 12:03:31,905 p=4747 u=student n=ansible | TASK [install mail config files] **********************************************************************************************************************************************************************************
+2024-06-07 12:03:32,864 p=4747 u=student n=ansible | changed: [servera.lab.example.com]
+2024-06-07 12:03:32,871 p=4747 u=student n=ansible | TASK [check main.cf file] *****************************************************************************************************************************************************************************************
+2024-06-07 12:03:33,268 p=4747 u=student n=ansible | ok: [servera.lab.example.com]
+2024-06-07 12:03:33,276 p=4747 u=student n=ansible | TASK [verify main.cf file exists] *********************************************************************************************************************************************************************************
+2024-06-07 12:03:33,317 p=4747 u=student n=ansible | ok: [servera.lab.example.com] => {
+    "msg": "The main.cf file exists"
+}
+2024-06-07 12:03:33,325 p=4747 u=student n=ansible | TASK [start and enable mail services] *****************************************************************************************************************************************************************************
+2024-06-07 12:03:34,126 p=4747 u=student n=ansible | ok: [servera.lab.example.com]
+2024-06-07 12:03:34,133 p=4747 u=student n=ansible | TASK [check for always_bcc] ***************************************************************************************************************************************************************************************
+2024-06-07 12:03:34,668 p=4747 u=student n=ansible | changed: [servera.lab.example.com]
+2024-06-07 12:03:34,675 p=4747 u=student n=ansible | TASK [email notification of always_bcc config] ********************************************************************************************************************************************************************
+2024-06-07 12:03:34,712 p=4747 u=student n=ansible | skipping: [servera.lab.example.com]
+2024-06-07 12:03:34,713 p=4747 u=student n=ansible | RUNNING HANDLER [restart postfix] *********************************************************************************************************************************************************************************
+2024-06-07 12:03:35,806 p=4747 u=student n=ansible | changed: [servera.lab.example.com]
+2024-06-07 12:03:35,808 p=4747 u=student n=ansible | PLAY RECAP ********************************************************************************************************************************************************************************************************
+2024-06-07 12:03:35,808 p=4747 u=student n=ansible | servera.lab.example.com    : ok=8    changed=3    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+2024-06-07 12:03:50,510 p=4863 u=student n=ansible | servera.lab.example.com | CHANGED | rc=0 >>
+# Do not change this content, this be managed by Ansible ##==}////>-
+#
+# Global Postfix configuration file. This file lists only a subset
+# of all parameters. For the syntax, and for a complete parameter
+# list, see the postconf(5) manual page (command: "man 5 postconf").
+#
+# For common configuration examples, see BASIC_CONFIGURATION_README
+# and STANDARD_CONFIGURATION_README. To find these documents, use
+# the command "postconf html_directory readme_directory", or go to
+# http://www.postfix.org/BASIC_CONFIGURATION_README.html etc.
+
+2024-06-07 12:15:01,141 p=5022 u=student n=ansible | PLAY [create mail relay servers] **********************************************************************************************************************************************************************************
+2024-06-07 12:15:01,150 p=5022 u=student n=ansible | TASK [Gathering Facts] ********************************************************************************************************************************************************************************************
+2024-06-07 12:15:02,484 p=5022 u=student n=ansible | ok: [servera.lab.example.com]
+2024-06-07 12:15:02,492 p=5022 u=student n=ansible | TASK [install postfix package] ************************************************************************************************************************************************************************************
+2024-06-07 12:15:04,154 p=5022 u=student n=ansible | ok: [servera.lab.example.com]
+2024-06-07 12:15:04,161 p=5022 u=student n=ansible | TASK [install mail config files] **********************************************************************************************************************************************************************************
+2024-06-07 12:15:05,043 p=5022 u=student n=ansible | ok: [servera.lab.example.com]
+2024-06-07 12:15:05,050 p=5022 u=student n=ansible | TASK [check main.cf file] *****************************************************************************************************************************************************************************************
+2024-06-07 12:15:05,445 p=5022 u=student n=ansible | ok: [servera.lab.example.com]
+2024-06-07 12:15:05,453 p=5022 u=student n=ansible | TASK [verify main.cf file exists] *********************************************************************************************************************************************************************************
+2024-06-07 12:15:05,496 p=5022 u=student n=ansible | ok: [servera.lab.example.com] => {
+    "msg": "The main.cf file exists"
+}
+2024-06-07 12:15:05,504 p=5022 u=student n=ansible | TASK [start and enable mail services] *****************************************************************************************************************************************************************************
+2024-06-07 12:15:06,273 p=5022 u=student n=ansible | ok: [servera.lab.example.com]
+2024-06-07 12:15:06,281 p=5022 u=student n=ansible | TASK [check for always_bcc] ***************************************************************************************************************************************************************************************
+2024-06-07 12:15:06,751 p=5022 u=student n=ansible | changed: [servera.lab.example.com]
+2024-06-07 12:15:06,758 p=5022 u=student n=ansible | TASK [email notification of always_bcc config] ********************************************************************************************************************************************************************
+2024-06-07 12:15:06,801 p=5022 u=student n=ansible | skipping: [servera.lab.example.com]
+2024-06-07 12:15:06,808 p=5022 u=student n=ansible | TASK [allow SMTP on firewall] *************************************************************************************************************************************************************************************
+2024-06-07 12:15:07,511 p=5022 u=student n=ansible | [WARNING]: The value 25 (type int) in a string field was converted to '25' (type string). If this does not look like what you expect, quote the entire value to ensure it does not change.
+
+2024-06-07 12:15:07,511 p=5022 u=student n=ansible | fatal: [servera.lab.example.com]: FAILED! => {"changed": false, "msg": "improper port format (missing protocol?)"}
+2024-06-07 12:15:07,513 p=5022 u=student n=ansible | PLAY RECAP ********************************************************************************************************************************************************************************************************
+2024-06-07 12:15:07,513 p=5022 u=student n=ansible | servera.lab.example.com    : ok=7    changed=1    unreachable=0    failed=1    skipped=1    rescued=0    ignored=0   
+2024-06-07 12:16:36,912 p=5149 u=student n=ansible | PLAY [create mail relay servers] **********************************************************************************************************************************************************************************
+2024-06-07 12:16:36,921 p=5149 u=student n=ansible | TASK [Gathering Facts] ********************************************************************************************************************************************************************************************
+2024-06-07 12:16:38,368 p=5149 u=student n=ansible | ok: [servera.lab.example.com]
+2024-06-07 12:16:38,377 p=5149 u=student n=ansible | TASK [install postfix package] ************************************************************************************************************************************************************************************
+2024-06-07 12:16:40,137 p=5149 u=student n=ansible | ok: [servera.lab.example.com]
+2024-06-07 12:16:40,144 p=5149 u=student n=ansible | TASK [install mail config files] **********************************************************************************************************************************************************************************
+2024-06-07 12:16:41,036 p=5149 u=student n=ansible | ok: [servera.lab.example.com]
+2024-06-07 12:16:41,043 p=5149 u=student n=ansible | TASK [check main.cf file] *****************************************************************************************************************************************************************************************
+2024-06-07 12:16:41,444 p=5149 u=student n=ansible | ok: [servera.lab.example.com]
+2024-06-07 12:16:41,452 p=5149 u=student n=ansible | TASK [verify main.cf file exists] *********************************************************************************************************************************************************************************
+2024-06-07 12:16:41,490 p=5149 u=student n=ansible | ok: [servera.lab.example.com] => {
+    "msg": "The main.cf file exists"
+}
+2024-06-07 12:16:41,497 p=5149 u=student n=ansible | TASK [start and enable mail services] *****************************************************************************************************************************************************************************
+2024-06-07 12:16:42,248 p=5149 u=student n=ansible | ok: [servera.lab.example.com]
+2024-06-07 12:16:42,256 p=5149 u=student n=ansible | TASK [check for always_bcc] ***************************************************************************************************************************************************************************************
+2024-06-07 12:16:42,764 p=5149 u=student n=ansible | changed: [servera.lab.example.com]
+2024-06-07 12:16:42,770 p=5149 u=student n=ansible | TASK [email notification of always_bcc config] ********************************************************************************************************************************************************************
+2024-06-07 12:16:42,808 p=5149 u=student n=ansible | skipping: [servera.lab.example.com]
+2024-06-07 12:16:42,816 p=5149 u=student n=ansible | TASK [allow SMTP on firewall] *************************************************************************************************************************************************************************************
+2024-06-07 12:16:43,524 p=5149 u=student n=ansible | changed: [servera.lab.example.com]
+2024-06-07 12:16:43,525 p=5149 u=student n=ansible | PLAY RECAP ********************************************************************************************************************************************************************************************************
+2024-06-07 12:16:43,525 p=5149 u=student n=ansible | servera.lab.example.com    : ok=8    changed=2    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+2024-06-07 12:16:51,645 p=5247 u=student n=ansible | PLAY [create mail relay servers] **********************************************************************************************************************************************************************************
+2024-06-07 12:16:51,653 p=5247 u=student n=ansible | TASK [Gathering Facts] ********************************************************************************************************************************************************************************************
+2024-06-07 12:16:52,747 p=5247 u=student n=ansible | ok: [servera.lab.example.com]
+2024-06-07 12:16:52,755 p=5247 u=student n=ansible | TASK [install postfix package] ************************************************************************************************************************************************************************************
+2024-06-07 12:16:54,404 p=5247 u=student n=ansible | ok: [servera.lab.example.com]
+2024-06-07 12:16:54,412 p=5247 u=student n=ansible | TASK [install mail config files] **********************************************************************************************************************************************************************************
+2024-06-07 12:16:55,292 p=5247 u=student n=ansible | ok: [servera.lab.example.com]
+2024-06-07 12:16:55,300 p=5247 u=student n=ansible | TASK [check main.cf file] *****************************************************************************************************************************************************************************************
+2024-06-07 12:16:55,698 p=5247 u=student n=ansible | ok: [servera.lab.example.com]
+2024-06-07 12:16:55,706 p=5247 u=student n=ansible | TASK [verify main.cf file exists] *********************************************************************************************************************************************************************************
+2024-06-07 12:16:55,743 p=5247 u=student n=ansible | ok: [servera.lab.example.com] => {
+    "msg": "The main.cf file exists"
+}
+2024-06-07 12:16:55,750 p=5247 u=student n=ansible | TASK [start and enable mail services] *****************************************************************************************************************************************************************************
+2024-06-07 12:16:56,465 p=5247 u=student n=ansible | ok: [servera.lab.example.com]
+2024-06-07 12:16:56,472 p=5247 u=student n=ansible | TASK [check for always_bcc] ***************************************************************************************************************************************************************************************
+2024-06-07 12:16:56,969 p=5247 u=student n=ansible | changed: [servera.lab.example.com]
+2024-06-07 12:16:56,976 p=5247 u=student n=ansible | TASK [email notification of always_bcc config] ********************************************************************************************************************************************************************
+2024-06-07 12:16:57,018 p=5247 u=student n=ansible | skipping: [servera.lab.example.com]
+2024-06-07 12:16:57,026 p=5247 u=student n=ansible | TASK [allow SMTP on firewall] *************************************************************************************************************************************************************************************
+2024-06-07 12:16:57,736 p=5247 u=student n=ansible | changed: [servera.lab.example.com]
+2024-06-07 12:16:57,738 p=5247 u=student n=ansible | PLAY RECAP ********************************************************************************************************************************************************************************************************
+2024-06-07 12:16:57,738 p=5247 u=student n=ansible | servera.lab.example.com    : ok=8    changed=2    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+2024-06-07 12:17:34,863 p=5333 u=student n=ansible | ansible 2.9.21
+  config file = /home/student/troubleshoot-host/ansible.cfg
+  configured module search path = ['/home/student/.ansible/plugins/modules', '/usr/share/ansible/plugins/modules']
+  ansible python module location = /usr/lib/python3.6/site-packages/ansible
+  executable location = /usr/bin/ansible
+  python version = 3.6.8 (default, Mar 18 2021, 08:58:41) [GCC 8.4.1 20200928 (Red Hat 8.4.1-1)]
+2024-06-07 12:17:34,863 p=5333 u=student n=ansible | Using /home/student/troubleshoot-host/ansible.cfg as config file
+2024-06-07 12:17:34,982 p=5333 u=student n=ansible | Skipping callback 'actionable', as we already have a stdout callback.
+2024-06-07 12:17:34,982 p=5333 u=student n=ansible | Skipping callback 'counter_enabled', as we already have a stdout callback.
+2024-06-07 12:17:34,982 p=5333 u=student n=ansible | Skipping callback 'debug', as we already have a stdout callback.
+2024-06-07 12:17:34,982 p=5333 u=student n=ansible | Skipping callback 'dense', as we already have a stdout callback.
+2024-06-07 12:17:34,982 p=5333 u=student n=ansible | Skipping callback 'dense', as we already have a stdout callback.
+2024-06-07 12:17:34,982 p=5333 u=student n=ansible | Skipping callback 'full_skip', as we already have a stdout callback.
+2024-06-07 12:17:34,982 p=5333 u=student n=ansible | Skipping callback 'json', as we already have a stdout callback.
+2024-06-07 12:17:34,982 p=5333 u=student n=ansible | Skipping callback 'minimal', as we already have a stdout callback.
+2024-06-07 12:17:34,982 p=5333 u=student n=ansible | Skipping callback 'null', as we already have a stdout callback.
+2024-06-07 12:17:34,982 p=5333 u=student n=ansible | Skipping callback 'oneline', as we already have a stdout callback.
+2024-06-07 12:17:34,982 p=5333 u=student n=ansible | Skipping callback 'selective', as we already have a stdout callback.
+2024-06-07 12:17:34,982 p=5333 u=student n=ansible | Skipping callback 'skippy', as we already have a stdout callback.
+2024-06-07 12:17:34,983 p=5333 u=student n=ansible | Skipping callback 'stderr', as we already have a stdout callback.
+2024-06-07 12:17:34,983 p=5333 u=student n=ansible | Skipping callback 'unixy', as we already have a stdout callback.
+2024-06-07 12:17:34,983 p=5333 u=student n=ansible | Skipping callback 'yaml', as we already have a stdout callback.
+2024-06-07 12:17:35,027 p=5333 u=student n=ansible | META: ran handlers
+2024-06-07 12:17:35,964 p=5333 u=student n=ansible | servera.lab.example.com | CHANGED | rc=0 >>
+8081/tcp 8082/tcp
+
+2024-06-07 12:17:35,965 p=5333 u=student n=ansible | META: ran handlers
+2024-06-07 12:17:35,965 p=5333 u=student n=ansible | META: ran handlers
+2024-06-07 12:17:52,706 p=5366 u=student n=ansible | servera.lab.example.com | CHANGED | rc=0 >>
+8081/tcp 8082/tcp
+
+2024-06-07 12:18:26,165 p=5390 u=student n=ansible | servera.lab.example.com | CHANGED | rc=0 >>
+cockpit dhcpv6-client samba ssh
+
+2024-06-07 12:18:38,533 p=5414 u=student n=ansible | servera.lab.example.com | CHANGED | rc=0 >>
+8081/tcp 8082/tcp
+
+2024-06-07 12:20:05,185 p=5480 u=student n=ansible | servera.lab.example.com | CHANGED | rc=0 >>
+8081/tcp 8082/tcp
+
+2024-06-07 12:20:09,483 p=5514 u=student n=ansible | PLAY [create mail relay servers] **********************************************************************************************************************************************************************************
+2024-06-07 12:20:09,492 p=5514 u=student n=ansible | TASK [Gathering Facts] ********************************************************************************************************************************************************************************************
+2024-06-07 12:20:10,566 p=5514 u=student n=ansible | ok: [servera.lab.example.com]
+2024-06-07 12:20:10,575 p=5514 u=student n=ansible | TASK [install postfix package] ************************************************************************************************************************************************************************************
+2024-06-07 12:20:12,340 p=5514 u=student n=ansible | ok: [servera.lab.example.com]
+2024-06-07 12:20:12,348 p=5514 u=student n=ansible | TASK [install mail config files] **********************************************************************************************************************************************************************************
+2024-06-07 12:20:13,218 p=5514 u=student n=ansible | ok: [servera.lab.example.com]
+2024-06-07 12:20:13,226 p=5514 u=student n=ansible | TASK [check main.cf file] *****************************************************************************************************************************************************************************************
+2024-06-07 12:20:13,610 p=5514 u=student n=ansible | ok: [servera.lab.example.com]
+2024-06-07 12:20:13,618 p=5514 u=student n=ansible | TASK [verify main.cf file exists] *********************************************************************************************************************************************************************************
+2024-06-07 12:20:13,662 p=5514 u=student n=ansible | ok: [servera.lab.example.com] => {
+    "msg": "The main.cf file exists"
+}
+2024-06-07 12:20:13,674 p=5514 u=student n=ansible | TASK [start and enable mail services] *****************************************************************************************************************************************************************************
+2024-06-07 12:20:14,407 p=5514 u=student n=ansible | ok: [servera.lab.example.com]
+2024-06-07 12:20:14,417 p=5514 u=student n=ansible | TASK [check for always_bcc] ***************************************************************************************************************************************************************************************
+2024-06-07 12:20:14,898 p=5514 u=student n=ansible | changed: [servera.lab.example.com]
+2024-06-07 12:20:14,906 p=5514 u=student n=ansible | TASK [email notification of always_bcc config] ********************************************************************************************************************************************************************
+2024-06-07 12:20:14,956 p=5514 u=student n=ansible | skipping: [servera.lab.example.com]
+2024-06-07 12:20:14,963 p=5514 u=student n=ansible | TASK [allow SMTP on firewall] *************************************************************************************************************************************************************************************
+2024-06-07 12:20:15,676 p=5514 u=student n=ansible | changed: [servera.lab.example.com]
+2024-06-07 12:20:15,678 p=5514 u=student n=ansible | PLAY RECAP ********************************************************************************************************************************************************************************************************
+2024-06-07 12:20:15,678 p=5514 u=student n=ansible | servera.lab.example.com    : ok=8    changed=2    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+2024-06-07 12:20:25,291 p=5600 u=student n=ansible | servera.lab.example.com | CHANGED | rc=0 >>
+8081/tcp 8082/tcp
+
+2024-06-07 12:20:32,188 p=5624 u=student n=ansible | servera.lab.example.com | CHANGED | rc=0 >>
+cockpit dhcpv6-client samba smtp ssh
+
